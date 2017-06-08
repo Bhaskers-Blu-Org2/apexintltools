@@ -31,6 +31,8 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             if (isValid())
             {
                 CaptureSetting.LogFolder = txtLogFolder.Text.Trim();
+                CaptureSetting.ENUCaptureFolder = txtENUFolder.Text.Trim();
+                CaptureSetting.LocCaptureFolder = txtLocFolder.Text.Trim();
                 OTPUtility.GetFolderInfo();
                 CaptureSetting.IsReadyForReview = true;
                 this.DialogResult = DialogResult.OK;
@@ -142,6 +144,14 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 Global.Init(sessionKey);
                 
             }
+        }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+            this.txtSessionKey.Text = Global.GithubToken;
+            this.txtLocFolder.Text = CaptureSetting.LocCaptureFolder;
+            this.txtENUFolder.Text = CaptureSetting.ENUCaptureFolder;
+            this.txtLogFolder.Text = CaptureSetting.LogFolder;
         }
 
         //private void button1_Click(object sender, EventArgs e)

@@ -32,6 +32,10 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         {
             get
             {
+                if (string.IsNullOrEmpty(token))
+                {
+                    return "";
+                }
                 return OTPUtility.Decrypt(token);
             }
             set
