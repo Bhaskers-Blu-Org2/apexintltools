@@ -46,7 +46,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void EndUserLicense_Load(object sender, EventArgs e)
         {
-            using (Stream stream = GenerateStreamFromString(Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.Open_Test_Platform_Capture_Viewer_EULA__final_))
+            using (Stream stream = GenerateStreamFromString(Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.Open_Test_Platform_Capture_Viewer_EULA))
             {
                 txtEULA.LoadFile(stream, RichTextBoxStreamType.RichText);
             }

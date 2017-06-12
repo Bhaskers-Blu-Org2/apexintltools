@@ -151,13 +151,13 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc2\adeff44\deff0\stshfdbch11\stshfloch0\stshfhich0\stshfbi0\deflang1033\deflangfe2052\themelang1033\themelangfe2052\themelangcs1025{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+        ///   Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc2\adeff45\deff0\stshfdbch11\stshfloch0\stshfhich0\stshfbi0\deflang1033\deflangfe2052\themelang1033\themelangfe2052\themelangcs1025{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
         ///{\f2\fbidi \fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f10\fbidi \fnil\fcharset2\fprq2{\*\panose 05000000000000000000}Wingdings;}
-        ///{\f11\fbidi \from [rest of string was truncated]&quot;;.
+        ///{\f11\fbidi \fmod [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Open_Test_Platform_Capture_Viewer_EULA__final_ {
+        internal static string Open_Test_Platform_Capture_Viewer_EULA {
             get {
-                return ResourceManager.GetString("Open_Test_Platform_Capture_Viewer_EULA__final_", resourceCulture);
+                return ResourceManager.GetString("Open_Test_Platform_Capture_Viewer_EULA", resourceCulture);
             }
         }
         

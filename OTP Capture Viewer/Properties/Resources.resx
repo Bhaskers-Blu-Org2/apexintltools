@@ -151,7 +151,7 @@
   <data name="Underline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\underline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Open_Test_Platform_Capture_Viewer_EULA__final_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Open Test Platform Capture Viewer EULA (final).rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  <data name="Open_Test_Platform_Capture_Viewer_EULA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Open Test Platform Capture Viewer EULA.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
 </root>

@@ -203,10 +203,10 @@
       <DependentUpon>TextForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
-    <None Include="Open Test Platform Capture Viewer EULA %28final%29.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Include="Open Test Platform Capture Viewer EULA.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Open Test Platform Capture Viewer EULA %28final%29.rtf" />
+    <None Include="Open Test Platform Capture Viewer EULA.rtf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
