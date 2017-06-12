@@ -43,6 +43,8 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
            
         }
 
+       
+
         private void toggleButtonBold_ToggleStateChanged(object sender, StateChangedEventArgs args)
         {
             ToggleBoldCommand command = new ToggleBoldCommand(this.txtDes.RichTextBoxElement.ActiveEditor);

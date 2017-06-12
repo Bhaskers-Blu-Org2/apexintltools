@@ -14,8 +14,16 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 {
     public partial class EulaForm : Form
     {
-        const string filename ="Open Test Platform Capture Viewer EULA (final).rtf";
+        //const string filename ="Open Test Platform Capture Viewer EULA (final).rtf";
         bool hasAccepted = false;
+        bool inViewMode = false;
+        public bool ViewMode
+        {
+            set
+            {
+                inViewMode = value;
+            }
+        }
         public bool HasAccepted
         {
             get
@@ -50,6 +58,19 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             {
                 txtEULA.LoadFile(stream, RichTextBoxStreamType.RichText);
             }
+
+            if (inViewMode)
+            {
+                btnAccept.Visible = false;
+                btnDecline.Visible = false;
+                btnClose.Visible = true;
+            }
+            else
+            {
+                btnAccept.Visible = true;
+                btnDecline.Visible = true;
+                btnClose.Visible = false;
+            }
         }
 
         private static Stream GenerateStreamFromString(string s)
@@ -60,6 +81,11 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             writer.Flush();
             stream.Position = 0;
             return stream;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

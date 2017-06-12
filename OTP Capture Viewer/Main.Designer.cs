@@ -47,7 +47,6 @@
             this.btnPrev = new System.Windows.Forms.ToolStripButton();
             this.btnNext = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnHelp = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pCapture = new System.Windows.Forms.Panel();
             this.splitContainerCapture = new System.Windows.Forms.SplitContainer();
@@ -83,6 +82,9 @@
             this.exactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.containsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anyWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.endUserLisenceAgreementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pCapture.SuspendLayout();
@@ -123,7 +125,7 @@
             this.btnPrev,
             this.btnNext,
             this.toolStripSeparator4,
-            this.btnHelp});
+            this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1264, 25);
@@ -271,16 +273,6 @@
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnHelp
-            // 
-            this.btnHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnHelp.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.Image")));
-            this.btnHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(23, 22);
-            this.btnHelp.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_ToolBar_About_Text;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // panel1
             // 
@@ -602,6 +594,32 @@
             this.anyWordToolStripMenuItem.Name = "anyWordToolStripMenuItem";
             this.anyWordToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
             // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.endUserLisenceAgreementToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // endUserLisenceAgreementToolStripMenuItem
+            // 
+            this.endUserLisenceAgreementToolStripMenuItem.Name = "endUserLisenceAgreementToolStripMenuItem";
+            this.endUserLisenceAgreementToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.endUserLisenceAgreementToolStripMenuItem.Text = "End User Lisence Agreement";
+            this.endUserLisenceAgreementToolStripMenuItem.Click += new System.EventHandler(this.endUserLisenceAgreementToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -679,7 +697,6 @@
         private System.Windows.Forms.PictureBox pictureBox_Good;
         private System.Windows.Forms.PictureBox pictureBox_Wrong;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton btnHelp;
         private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exactToolStripMenuItem;
@@ -701,6 +718,9 @@
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem3;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel currentTotalLabel;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem endUserLisenceAgreementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

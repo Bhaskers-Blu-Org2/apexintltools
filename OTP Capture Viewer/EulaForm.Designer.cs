@@ -33,12 +33,14 @@
             this.btnAccept = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtEULA = new System.Windows.Forms.RichTextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnDecline);
             this.panel1.Controls.Add(this.btnAccept);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -85,7 +87,18 @@
             this.txtEULA.Name = "txtEULA";
             this.txtEULA.Size = new System.Drawing.Size(584, 424);
             this.txtEULA.TabIndex = 0;
-            this.txtEULA.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.EulaForm_EulaText;
+            this.txtEULA.Text = "";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(12, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Visible = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // EulaForm
             // 
@@ -95,7 +108,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EulaForm";
-            this.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.EulaForm_DialogTitle_Text;
+            this.Text = "End User License Agreement";
             this.Load += new System.EventHandler(this.EndUserLicense_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -110,5 +123,6 @@
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox txtEULA;
+        private System.Windows.Forms.Button btnClose;
     }
 }

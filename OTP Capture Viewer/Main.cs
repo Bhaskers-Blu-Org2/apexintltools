@@ -952,8 +952,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            About dialog = new About();
-            dialog.ShowDialog();
+            
         }
 
         private void btnBug_Click(object sender, EventArgs e)
@@ -1230,6 +1229,19 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             {
                 copyToolStripMenuItem3.Enabled = true;
             }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About dialog = new About();
+            dialog.ShowDialog();
+        }
+
+        private void endUserLisenceAgreementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EulaForm frm = new EulaForm();
+            frm.ViewMode = true;
+            frm.ShowDialog();
         }
     }
 
