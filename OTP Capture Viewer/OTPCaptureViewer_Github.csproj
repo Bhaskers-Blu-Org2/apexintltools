@@ -222,9 +222,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApplicationIcon.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="ImageFolder\AddComment.png" />
     <Content Include="ImageFolder\Edit.png" />
     <Content Include="ImageFolder\font.png" />
@@ -251,9 +248,6 @@
     <Content Include="ImageFolder\ZoomIn.jpg" />
     <Content Include="ImageFolder\ZoomIn.png" />
     <Content Include="OTPCaptureViewer.ico" />
-    <Content Include="pen.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\Bold.png" />
     <None Include="Resources\AlignCenter.png" />
     <None Include="Resources\AlignJustify.png" />
@@ -263,9 +257,6 @@
     <None Include="Resources\Numbering.png" />
     <None Include="Resources\Italic.png" />
     <None Include="Resources\Underline.png" />
-    <Content Include="writer.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
