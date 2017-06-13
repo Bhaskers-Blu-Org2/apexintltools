@@ -248,7 +248,8 @@
     <Content Include="ImageFolder\ZoomIn.jpg" />
     <Content Include="ImageFolder\ZoomIn.png" />
     <Content Include="OTPCaptureViewer.ico" />
-    <Content Include="writer.ico" />
+    <Content Include="pen.ico" />
+    <Content Include="ImageFolder\writer.ico" />
     <None Include="Resources\Bold.png" />
     <None Include="Resources\AlignCenter.png" />
     <None Include="Resources\AlignJustify.png" />

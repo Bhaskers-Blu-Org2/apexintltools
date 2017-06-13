@@ -511,7 +511,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             if (!isStartRectangle)
             {
                 setControlBackColor(btnRect);
-                Bitmap myIcon = new Bitmap("writer.ico");
+                Bitmap myIcon = Properties.Resources.writer.ToBitmap();
                 this.Cursor = CreateCursor(myIcon, 0, 12);
                 setZoonEnable(false);
             }
@@ -538,7 +538,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             {
                 //Modify cursor for Pen
                 setControlBackColor(btnDraw);
-                Bitmap myIcon = new Bitmap("pen.ico");
+                Bitmap myIcon = Properties.Resources.pen.ToBitmap();
                 this.Cursor = CreateCursor(myIcon, 0, 12);
                 setZoonEnable(false);
             }
