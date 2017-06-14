@@ -44,13 +44,14 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.txtSessionKey = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.chkShowToken = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(456, 178);
+            this.btnOk.Location = new System.Drawing.Point(456, 193);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 6;
@@ -60,7 +61,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(537, 178);
+            this.btnCancel.Location = new System.Drawing.Point(537, 193);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 7;
@@ -79,7 +80,7 @@
             this.groupBox1.Controls.Add(this.btnBrowseLoc);
             this.groupBox1.Controls.Add(this.txtLocFolder);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 73);
+            this.groupBox1.Location = new System.Drawing.Point(14, 88);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(598, 99);
             this.groupBox1.TabIndex = 19;
@@ -173,12 +174,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkShowToken);
             this.groupBox2.Controls.Add(this.btnConnect);
             this.groupBox2.Controls.Add(this.txtSessionKey);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(598, 55);
+            this.groupBox2.Size = new System.Drawing.Size(598, 70);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Authentication";
@@ -199,6 +201,7 @@
             this.txtSessionKey.Name = "txtSessionKey";
             this.txtSessionKey.Size = new System.Drawing.Size(359, 20);
             this.txtSessionKey.TabIndex = 1;
+            this.txtSessionKey.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -209,11 +212,22 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Github Access Token:";
             // 
+            // chkShowToken
+            // 
+            this.chkShowToken.AutoSize = true;
+            this.chkShowToken.Location = new System.Drawing.Point(146, 44);
+            this.chkShowToken.Name = "chkShowToken";
+            this.chkShowToken.Size = new System.Drawing.Size(101, 17);
+            this.chkShowToken.TabIndex = 3;
+            this.chkShowToken.Text = "Show the token";
+            this.chkShowToken.UseVisualStyleBackColor = true;
+            this.chkShowToken.CheckedChanged += new System.EventHandler(this.chkShowToken_CheckedChanged);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 211);
+            this.ClientSize = new System.Drawing.Size(624, 226);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancel);
@@ -247,5 +261,6 @@
         private System.Windows.Forms.TextBox txtSessionKey;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.CheckBox chkShowToken;
     }
 }

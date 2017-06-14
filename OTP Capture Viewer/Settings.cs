@@ -154,6 +154,18 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             this.txtLogFolder.Text = CaptureSetting.LogFolder;
         }
 
+        private void chkShowToken_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShowToken.Checked==true)
+            {
+                txtSessionKey.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtSessionKey.UseSystemPasswordChar = true;
+            }
+        }
+
         //private void button1_Click(object sender, EventArgs e)
         //{
         //    NewIssue dialog = new OTPCaptureViewer.NewIssue();
