@@ -592,6 +592,15 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show the token.
+        /// </summary>
+        internal static string Setting_ShowTheTokenCheckBox_Text {
+            get {
+                return ResourceManager.GetString("Setting_ShowTheTokenCheckBox_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Github Access Token:.
         /// </summary>
         internal static string Settings_AccessTokenLable_Text {

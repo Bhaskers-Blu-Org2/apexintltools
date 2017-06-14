@@ -327,6 +327,9 @@
   <data name="Settings_OKButton_Text" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="Setting_ShowTheTokenCheckBox_Text" xml:space="preserve">
+    <value>Show the token</value>
+  </data>
   <data name="TextForm_CancelButton_Text" xml:space="preserve">
     <value>Cancel</value>
   </data>

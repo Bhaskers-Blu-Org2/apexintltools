@@ -1,4 +1,6 @@
-﻿namespace Microsoft.SQL.Loc.OTPCaptureViewer
+﻿using Microsoft.SQL.Loc.OTPCaptureViewer.Resx;
+
+namespace Microsoft.SQL.Loc.OTPCaptureViewer
 {
     partial class Settings
     {
@@ -219,7 +221,7 @@
             this.chkShowToken.Name = "chkShowToken";
             this.chkShowToken.Size = new System.Drawing.Size(101, 17);
             this.chkShowToken.TabIndex = 3;
-            this.chkShowToken.Text = "Show the token";
+            this.chkShowToken.Text = UIStrings.Setting_ShowTheTokenCheckBox_Text;
             this.chkShowToken.UseVisualStyleBackColor = true;
             this.chkShowToken.CheckedChanged += new System.EventHandler(this.chkShowToken_CheckedChanged);
             // 
