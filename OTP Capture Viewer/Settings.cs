@@ -35,6 +35,14 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 CaptureSetting.LocCaptureFolder = txtLocFolder.Text.Trim();
                 OTPUtility.GetFolderInfo();
                 CaptureSetting.IsReadyForReview = true;
+                if (chkSaveSxS.Checked)
+                {
+                    Global.SaveReferenceCaptureSxS = true;
+                }
+                else
+                {
+                    Global.SaveReferenceCaptureSxS = false;
+                }
                 this.DialogResult = DialogResult.OK;
             }
         }

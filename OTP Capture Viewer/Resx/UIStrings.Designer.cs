@@ -664,6 +664,15 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to When save updated review screenshot also save the refrence screenshot SxS.
+        /// </summary>
+        internal static string Settings_CheckBoxSaveSxS_Text {
+            get {
+                return ResourceManager.GetString("Settings_CheckBoxSaveSxS_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connect.
         /// </summary>
         internal static string Settings_ConnectButton_Text {

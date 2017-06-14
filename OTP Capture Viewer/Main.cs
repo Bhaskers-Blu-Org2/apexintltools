@@ -490,7 +490,13 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             if (!isStartRectangle)
             {
                 setControlBackColor(btnRect);
-                Bitmap myIcon = Properties.Resources.writer.ToBitmap();
+                Size iconSize = SystemInformation.SmallIconSize;
+                Bitmap myIcon = new Bitmap(iconSize.Width, iconSize.Height);
+                using (Graphics g = Graphics.FromImage(myIcon))
+                {
+                    g.DrawIcon(Properties.Resources.writer, new Rectangle(Point.Empty, iconSize));
+                }
+                //Bitmap myIcon = Properties.Resources.writer.ToBitmap();
                 this.Cursor = CreateCursor(myIcon, 0, 12);
                 setZoonEnable(false);
             }
@@ -517,7 +523,13 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             {
                 //Modify cursor for Pen
                 setControlBackColor(btnDraw);
-                Bitmap myIcon = Properties.Resources.pen.ToBitmap();
+                Size iconSize = SystemInformation.SmallIconSize;
+                Bitmap myIcon = new Bitmap(iconSize.Width, iconSize.Height);
+                using (Graphics g = Graphics.FromImage(myIcon))
+                {
+                    g.DrawIcon(Properties.Resources.pen, new Rectangle(Point.Empty, iconSize));
+                }
+                //Bitmap myIcon = Properties.Resources.pen.ToBitmap();
                 this.Cursor = CreateCursor(myIcon, 0, 12);
                 setZoonEnable(false);
             }
@@ -946,7 +958,15 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 }
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    pictureBox_Review.Image.Save(dialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                    if (Global.SaveReferenceCaptureSxS && pictureBox_Base.Image!=null)
+                    {
+                        Image combinedImage = ImageUtility.CombineImages(new Image[] { pictureBox_Review.Image, pictureBox_Base.Image });
+                        combinedImage.Save(dialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                    }
+                    else
+                    {
+                        pictureBox_Review.Image.Save(dialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                    }
                     this.isPictureEdited = false;
                 }
             }

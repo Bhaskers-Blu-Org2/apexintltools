@@ -26,6 +26,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         internal static List<Issue> RepoIssues = new List<Issue>();
         internal static CaptureFolderInfo ReviewCaptureFolderInfo = null;
         internal static CaptureFolderInfo ReferenceCaptureFolderInfo = null;
+        internal static bool SaveReferenceCaptureSxS = true;
         //internal static string ReviewFolderPath = @"\Review";
         static string token = "";
         internal static string GithubToken

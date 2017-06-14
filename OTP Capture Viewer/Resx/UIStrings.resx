@@ -342,4 +342,7 @@
   <data name="VersionNumber" xml:space="preserve">
     <value>0.3.0.0</value>
   </data>
+  <data name="Settings_CheckBoxSaveSxS_Text" xml:space="preserve">
+    <value>When save updated review screenshot also save the refrence screenshot SxS</value>
+  </data>
 </root>
