@@ -223,7 +223,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         {
             try
             {
-                title = string.Format("{0}{3}:{1} [{2}]",language, title, captureName,Global.ReviewCaptureFolderInfo.ProductName);
+                title = string.Format("{0}:{3}:{1} [{2}]",language, title, captureName,Global.ReviewCaptureFolderInfo.ProductName);
                 Octokit.NewIssue newIssue = new Octokit.NewIssue(title);
                 newIssue.Body = description;
                 Task<Issue> createIssueTask = Global.GitHubClient.Issue.Create(Global.Owner, Global.Name, newIssue);

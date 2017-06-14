@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -318,29 +319,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                      loadENUCaptures();
                  });
 
-            //Task task3 = Task.Factory.StartNew(() =>
-            //    {
-            //        loadSuggestions();
-            //    });
-
             Task.WaitAll(task1, task2);
-
-            //if (CaptureSetting.CaptureFormat != CaptureFormats.OTPFile)
-            //{
-            //    pictureBox_Base.MouseMove -= pictureBox_Base_MouseMove;
-            //    copyToolStripMenuItem.Enabled = false;
-            //    copyToolStripMenuItem1.Enabled = false;
-            //    menuTerminologyService.Enabled = false;
-
-            //}
-            //else
-            //{
-            //    pictureBox_Base.MouseMove += pictureBox_Base_MouseMove;
-            //    copyToolStripMenuItem.Enabled = true;
-            //    copyToolStripMenuItem1.Enabled = true;
-            //    menuTerminologyService.Enabled = true;
-
-            //}
 
             currentCaptureIndex = 0;
             showCapture();
@@ -612,23 +591,16 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             resetButton();
         }
 
-        public struct IconInfo
-        {
-            public bool fIcon;
-            public int xHotspot;
-            public int yHotspot;
-            public IntPtr hbmMask;
-            public IntPtr hbmColor;
-        }
+       
 
         public static Cursor CreateCursor(Bitmap bmp, int xHotSpot, int yHotSpot)
         {
             IconInfo tmp = new IconInfo();
-            GetIconInfo(bmp.GetHicon(), ref tmp);
+            Win32API.GetIconInfo(bmp.GetHicon(), ref tmp);
             tmp.xHotspot = xHotSpot;
             tmp.yHotspot = yHotSpot;
             tmp.fIcon = false;
-            return new Cursor(CreateIconIndirect(ref tmp));
+            return new Cursor(Win32API.CreateIconIndirect(ref tmp));
         }
 
         public void zoomPicture(Image bitmap, float zoomscale, Image graphicImage, PictureBox picturebox)
@@ -640,18 +612,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             picturebox.Image = graphicImage;
             picturebox.Width = graphicImage.Width;
             picturebox.Height = graphicImage.Height;
-        }
-
-        #region Native APIs
-
-        [DllImport("user32.dll")]
-        public static extern IntPtr CreateIconIndirect(ref IconInfo icon);
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool GetIconInfo(IntPtr hIcon, ref IconInfo pIconInfo);
-
-        #endregion 
+        } 
 
         private void btnScaleOut_Click(object sender, EventArgs e)
         {
