@@ -664,7 +664,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to When save updated review screenshot also save the refrence screenshot SxS.
+        ///   Looks up a localized string similar to Save reference capture side by side with review capture.
         /// </summary>
         internal static string Settings_CheckBoxSaveSxS_Text {
             get {
