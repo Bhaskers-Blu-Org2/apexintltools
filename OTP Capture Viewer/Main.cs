@@ -40,7 +40,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         bool isDrawText = false;
         bool isDrawRectangle = false;
         bool isStartSuggestion = false;
-        bool canMove = true;
+        //bool canMove = true;
         Point point = new Point();//Cordinate for mouse move
         Image reviewImage = null;
         Image baseImage = null;
@@ -71,7 +71,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         XmlDocument resultDoc;
         XmlElement root;
 
-        string currentKey = "";
+        //string currentKey = "";
 
         public Main()
         {
@@ -659,7 +659,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 {
                     //Pop up text form to input text
                     TextForm tForm = new TextForm();
-                    canMove = false;
+                    //canMove = false;
                     if (tForm.ShowDialog() == DialogResult.OK)
                     {
                         isDrawText = tForm.IsDrawText;
@@ -670,7 +670,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                         g1.DrawString(tForm.TextInput, tForm.TextFont, new SolidBrush(Color.Red), new RectangleF(point, tForm.TextSize));
                         this.isPictureEdited = true;
                     }
-                    canMove = true;
+                    //canMove = true;
                 }
 
 

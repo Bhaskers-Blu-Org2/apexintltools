@@ -56,7 +56,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     //thumbnailImageBytes = ZipUtility.ExtractThumbnailImage(archive);
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 throw new Exception("Format is not supported!");
             }

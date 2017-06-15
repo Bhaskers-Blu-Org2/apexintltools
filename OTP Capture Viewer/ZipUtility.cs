@@ -16,7 +16,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         static ImageFormat imageFormat = ImageFormat.Png;
         static string imageExtension = ".png";
         static string metadataExtension = ".xml";
-        static int thumbnailWidth = 150;
+        //static int thumbnailWidth = 150;
         static string thunbmailName = "_Thumbnail";
 
         internal static byte[] ExtractImage(ZipArchive archive)
