@@ -133,7 +133,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fail.
+        ///   Looks up a localized string similar to fail.
         /// </summary>
         internal static string Main_CaptureResult_Fail_LabelText {
             get {
@@ -151,7 +151,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pass.
+        ///   Looks up a localized string similar to pass.
         /// </summary>
         internal static string Main_CaptureResult_Pass_LabelText {
             get {
