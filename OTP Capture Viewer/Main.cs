@@ -306,7 +306,8 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         private void btnStart_Click(object sender, EventArgs e)
         {
             resetState();
-            createTempFolder();
+            ////Remove code for creating temp folder, as temp folder is no need for github version
+            ////createTempFolder();
             
 
             Task task1 = Task.Factory.StartNew(() =>
