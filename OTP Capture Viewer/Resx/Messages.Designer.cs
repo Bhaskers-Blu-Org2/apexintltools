@@ -205,7 +205,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open result file failed! It may be used by another process..
+        ///   Looks up a localized string similar to Log result to result file failed! It may be used by another process. Please close the process which is using this file and try again..
         /// </summary>
         internal static string ReviewCapture_OpenResultFileFail_Message {
             get {

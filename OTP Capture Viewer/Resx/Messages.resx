@@ -166,7 +166,7 @@
     <value>You must select a folder!</value>
   </data>
   <data name="ReviewCapture_OpenResultFileFail_Message" xml:space="preserve">
-    <value>Open result file failed! It may be used by another process.</value>
+    <value>Log result to result file failed! It may be used by another process. Please close the process which is using this file and try again.</value>
   </data>
   <data name="ReviewCapture_SaveResultFail_Message" xml:space="preserve">
     <value>Save result failed!</value>
