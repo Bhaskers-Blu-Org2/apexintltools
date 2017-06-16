@@ -160,7 +160,7 @@
     <value>Please select an issue!</value>
   </data>
   <data name="RepoBrowser_FolderNotReady_Message" xml:space="preserve">
-    <value>The folder is not ready for linguistic review!</value>
+    <value>There is no capture for linguistic review in this folder!</value>
   </data>
   <data name="RepoBrowser_FolderNotSelected_Message" xml:space="preserve">
     <value>You must select a folder!</value>
@@ -175,7 +175,7 @@
     <value>Fail to create the folder!</value>
   </data>
   <data name="Settings_LogFolderNotExist_Message" xml:space="preserve">
-    <value>Log folder does not exist, create it?</value>
+    <value>Log folder does not exist. Do you want to create it?</value>
   </data>
   <data name="Settings_LogFolderNotSet_Message" xml:space="preserve">
     <value>Log folder is not set!</value>
