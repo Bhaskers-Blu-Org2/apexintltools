@@ -797,7 +797,8 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             if (currentCaptureIndex >= 0)
             {
                 string fileName = locCaptureNames[currentCaptureIndex];
-                string language = Global.ReviewCaptureFolderInfo.LanguageId.ToString();
+                //string language = Global.ReviewCaptureFolderInfo.LanguageId.ToString();
+                string language = Global.ReviewCaptureFolderInfo.LanguageName.ToString();
                
                 XmlElement existedNode = (XmlElement)root.SelectSingleNode("./Capture[@FileName='" + fileName + "' and @Language='" + language + "']");
 
@@ -830,7 +831,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         private void updateResult()
         {
             string fileName = locCaptureNames[currentCaptureIndex];
-            string language = Global.ReviewCaptureFolderInfo.LanguageId.ToString();
+            string language = Global.ReviewCaptureFolderInfo.LanguageName.ToString();
             
             
 
@@ -870,7 +871,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                         StringBuilder header = new StringBuilder();
                         header.Append("FileName");
                         header.Append("\t");
-                        header.Append("LCID");
+                        header.Append("Language");
                         header.Append("\t");
                         header.Append("Result");
                         header.Append("\t");
