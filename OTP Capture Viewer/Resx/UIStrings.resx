@@ -345,4 +345,10 @@
   <data name="Settings_CheckBoxSaveSxS_Text" xml:space="preserve">
     <value>Save reference capture side by side with review capture</value>
   </data>
+  <data name="WaitForm_DialogTitle_Text" xml:space="preserve">
+    <value>WaitForm</value>
+  </data>
+  <data name="WaitForm_Processing_Text" xml:space="preserve">
+    <value>Processing...</value>
+  </data>
 </root>

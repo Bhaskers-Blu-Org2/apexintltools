@@ -743,5 +743,23 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
                 return ResourceManager.GetString("VersionNumber", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WaitForm.
+        /// </summary>
+        internal static string WaitForm_DialogTitle_Text {
+            get {
+                return ResourceManager.GetString("WaitForm_DialogTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processing....
+        /// </summary>
+        internal static string WaitForm_Processing_Text {
+            get {
+                return ResourceManager.GetString("WaitForm_Processing_Text", resourceCulture);
+            }
+        }
     }
 }
