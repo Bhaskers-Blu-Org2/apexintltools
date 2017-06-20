@@ -160,13 +160,13 @@
     <value>Please select an issue!</value>
   </data>
   <data name="RepoBrowser_FolderNotReady_Message" xml:space="preserve">
-    <value>The folder is not ready for linguistic review!</value>
+    <value>There is no capture for linguistic review in this folder!</value>
   </data>
   <data name="RepoBrowser_FolderNotSelected_Message" xml:space="preserve">
     <value>You must select a folder!</value>
   </data>
   <data name="ReviewCapture_OpenResultFileFail_Message" xml:space="preserve">
-    <value>Open result file failed! It may be used by another process.</value>
+    <value>Log result to result file failed! It may be used by another process. Please close the process which is using this file and try again.</value>
   </data>
   <data name="ReviewCapture_SaveResultFail_Message" xml:space="preserve">
     <value>Save result failed!</value>
@@ -175,7 +175,7 @@
     <value>Fail to create the folder!</value>
   </data>
   <data name="Settings_LogFolderNotExist_Message" xml:space="preserve">
-    <value>Log folder does not exist, create it?</value>
+    <value>Log folder does not exist. Do you want to create it?</value>
   </data>
   <data name="Settings_LogFolderNotSet_Message" xml:space="preserve">
     <value>Log folder is not set!</value>

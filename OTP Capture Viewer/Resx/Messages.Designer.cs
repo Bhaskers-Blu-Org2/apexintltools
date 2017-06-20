@@ -187,7 +187,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The folder is not ready for linguistic review!.
+        ///   Looks up a localized string similar to There is no capture for linguistic review in this folder!.
         /// </summary>
         internal static string RepoBrowser_FolderNotReady_Message {
             get {
@@ -205,7 +205,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open result file failed! It may be used by another process..
+        ///   Looks up a localized string similar to Log result to result file failed! It may be used by another process. Please close the process which is using this file and try again..
         /// </summary>
         internal static string ReviewCapture_OpenResultFileFail_Message {
             get {
@@ -232,7 +232,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Log folder does not exist, create it?.
+        ///   Looks up a localized string similar to Log folder does not exist. Do you want to create it?.
         /// </summary>
         internal static string Settings_LogFolderNotExist_Message {
             get {

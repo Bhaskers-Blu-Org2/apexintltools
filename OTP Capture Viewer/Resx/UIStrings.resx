@@ -142,13 +142,13 @@
     <value />
   </data>
   <data name="Main_CaptureResult_Fail_LabelText" xml:space="preserve">
-    <value>Fail</value>
+    <value>fail</value>
   </data>
   <data name="Main_CaptureResult_NotReviewed_LabelText" xml:space="preserve">
     <value>Not Reviewed</value>
   </data>
   <data name="Main_CaptureResult_Pass_LabelText" xml:space="preserve">
-    <value>Pass</value>
+    <value>pass</value>
   </data>
   <data name="Main_ContextMenu_Copy_Text" xml:space="preserve">
     <value>Copy</value>
