@@ -583,6 +583,15 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to info.xml.
+        /// </summary>
+        internal static string RepoBrowser_InfoFileName {
+            get {
+                return ResourceManager.GetString("RepoBrowser_InfoFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         internal static string RepoBrowser_OKButton_Text {

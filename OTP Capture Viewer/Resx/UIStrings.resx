@@ -345,6 +345,9 @@
   <data name="Settings_CheckBoxSaveSxS_Text" xml:space="preserve">
     <value>Save reference capture side by side with review capture</value>
   </data>
+  <data name="RepoBrowser_InfoFileName" xml:space="preserve">
+    <value>info.xml</value>
+  </data>
   <data name="WaitForm_DialogTitle_Text" xml:space="preserve">
     <value>WaitForm</value>
   </data>

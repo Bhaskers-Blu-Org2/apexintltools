@@ -66,7 +66,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 bool foundInfoFile = false;
                 foreach (GithubTreeItem child in item.Children)
                 {
-                    if (System.IO.Path.GetFileName(child.Item.Name).ToLower()=="info.xml")
+                    if (System.IO.Path.GetFileName(child.Item.Name).ToLower()==global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.RepoBrowser_InfoFileName)
                     {
                         foundInfoFile = true;
                         Task<Blob> blobTask = Global.GitHubClient.Git.Blob.Get(Global.RepoId, child.Item.Sha);
