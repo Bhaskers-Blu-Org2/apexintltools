@@ -583,6 +583,15 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to info.xml.
+        /// </summary>
+        internal static string RepoBrowser_InfoFileName {
+            get {
+                return ResourceManager.GetString("RepoBrowser_InfoFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         internal static string RepoBrowser_OKButton_Text {
@@ -741,6 +750,24 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         internal static string VersionNumber {
             get {
                 return ResourceManager.GetString("VersionNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WaitForm.
+        /// </summary>
+        internal static string WaitForm_DialogTitle_Text {
+            get {
+                return ResourceManager.GetString("WaitForm_DialogTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processing....
+        /// </summary>
+        internal static string WaitForm_Processing_Text {
+            get {
+                return ResourceManager.GetString("WaitForm_Processing_Text", resourceCulture);
             }
         }
     }
