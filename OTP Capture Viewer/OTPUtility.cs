@@ -169,7 +169,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                             file.Name = treeResponses.Tree[i].Path;
                             if (isSupportedFile(file.Name))
                             {
-                                file.Path = Path.Combine(parent.Item.Path, treeResponses.Tree[i].Path);
+                                file.Path = parent.Item.Path + "\\" + file.Name ;
                                 file.Sha = treeResponses.Tree[i].Sha;
                                 parent.Children.Add(new GithubTreeItem(file));
                             }

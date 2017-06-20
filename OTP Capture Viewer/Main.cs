@@ -192,7 +192,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     string key = locCaptureNames[currentCaptureIndex];
                     GithubFolderOrFile item = locCaptures[key];
                     string fileName = System.IO.Path.GetFileName(item.Name);
-                    this.Text = Global.ProductName + " - " + fileName;
+                    this.Text = Global.ProductName + "  -  " + item.Path;
                     Task<Blob> blobTask = Global.GitHubClient.Git.Blob.Get(Global.RepoId, item.Sha);
                     blobTask.Wait();
                     Blob blob = blobTask.Result;
@@ -224,6 +224,8 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                             }
 
                         }
+
+                        
                     }
                     if (enuCaptures.Keys.Contains(key))
                     {
@@ -250,12 +252,15 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                                     pictureBox_Base.Image = image;
                                     baseImage = image;
                                 }
-                            }                          
+                            }
+
+                            
                         }
                     }
                     else
                     {
                         pictureBox_Base.Image = Properties.Resources.NotFound;
+                        
                     }
 
                     if (!key.ToLower().EndsWith(".otp"))
@@ -351,12 +356,12 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 //        }
                 //    }
                 //}
-                loadCaptures(Global.LocTreeItem, locCaptures, Global.LocTreeItem.Item.Name);
+                loadCaptures(Global.LocTreeItem, locCaptures);
                 locCaptureNames = locCaptures.Keys.ToList<string>();
             }
         }
 
-        private void loadCaptures(GithubTreeItem item,Dictionary<string,GithubFolderOrFile> captures, string folder)
+        private void loadCaptures(GithubTreeItem item,Dictionary<string,GithubFolderOrFile> captures)
         {
             foreach (GithubTreeItem child in item.Children)
             {
@@ -365,12 +370,12 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     if (System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".otp" || System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".png" ||
                         System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".jpg")
                     {
-                        captures.Add(folder+"\\"+child.Item.Name.ToLower(), child.Item);
+                        captures.Add(child.Item.Name.ToLower(), child.Item);
                     }
                 }
                 else
                 {
-                    loadCaptures(child,captures,folder+"\\"+child.Item.Name);
+                    loadCaptures(child,captures);
                 }
             }
         }
@@ -392,7 +397,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
                 //    }
                 //}
-                loadCaptures(Global.ENUTreeItem, enuCaptures, Global.ENUTreeItem.Item.Name);
+                loadCaptures(Global.ENUTreeItem, enuCaptures);
             }
         }
 
@@ -976,7 +981,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 SaveFileDialog dialog = new SaveFileDialog();
                 dialog.Filter = "Image (.png)|*.png";
 
-                dialog.FileName = "Updated_" + locCaptureNames[currentCaptureIndex];
+                dialog.FileName = "Updated_" + Path.GetFileNameWithoutExtension(locCaptureNames[currentCaptureIndex]);
                 dialog.InitialDirectory = userFolder;
                 dialog.RestoreDirectory = true;
                 if (!(dialog.FileName.ToString().ToLower().EndsWith(".png")))

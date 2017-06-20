@@ -47,6 +47,9 @@
             this.btnPrev = new System.Windows.Forms.ToolStripButton();
             this.btnNext = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.endUserLisenceAgreementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pCapture = new System.Windows.Forms.Panel();
             this.splitContainerCapture = new System.Windows.Forms.SplitContainer();
@@ -82,9 +85,6 @@
             this.exactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.containsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anyWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.endUserLisenceAgreementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pCapture.SuspendLayout();
@@ -274,6 +274,32 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.endUserLisenceAgreementToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // endUserLisenceAgreementToolStripMenuItem
+            // 
+            this.endUserLisenceAgreementToolStripMenuItem.Name = "endUserLisenceAgreementToolStripMenuItem";
+            this.endUserLisenceAgreementToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.endUserLisenceAgreementToolStripMenuItem.Text = "End User Lisence Agreement";
+            this.endUserLisenceAgreementToolStripMenuItem.Click += new System.EventHandler(this.endUserLisenceAgreementToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pCapture);
@@ -361,7 +387,7 @@
             // 
             // lblResult
             // 
-            this.lblResult.Location = new System.Drawing.Point(124, 15);
+            this.lblResult.Location = new System.Drawing.Point(128, 11);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(93, 18);
             this.lblResult.TabIndex = 1;
@@ -372,9 +398,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(6, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 18);
+            this.label1.Size = new System.Drawing.Size(116, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Review Capture";
+            this.label1.Text = "Review Capture:";
             // 
             // pictureBox_Base
             // 
@@ -417,10 +443,10 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(3, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 18);
+            this.label2.Size = new System.Drawing.Size(136, 18);
             this.label2.TabIndex = 1;
             this.label2.Tag = ",";
-            this.label2.Text = "Reference Capture";
+            this.label2.Text = "Reference Capture:";
             // 
             // pButton
             // 
@@ -593,32 +619,6 @@
             // 
             this.anyWordToolStripMenuItem.Name = "anyWordToolStripMenuItem";
             this.anyWordToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.endUserLisenceAgreementToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            // 
-            // endUserLisenceAgreementToolStripMenuItem
-            // 
-            this.endUserLisenceAgreementToolStripMenuItem.Name = "endUserLisenceAgreementToolStripMenuItem";
-            this.endUserLisenceAgreementToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.endUserLisenceAgreementToolStripMenuItem.Text = "End User Lisence Agreement";
-            this.endUserLisenceAgreementToolStripMenuItem.Click += new System.EventHandler(this.endUserLisenceAgreementToolStripMenuItem_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Main
             // 
