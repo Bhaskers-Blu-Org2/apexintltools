@@ -23,7 +23,13 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void RepoBrowser_Load(object sender, EventArgs e)
         {
-            githubTreeView.ExpandAll();
+            if (githubTreeView.Nodes.Count>0)
+            {
+                foreach (TreeNode tn in githubTreeView.Nodes)
+                {
+                    tn.Expand();
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -149,7 +149,11 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             }
             else
             {
-                Global.Init(sessionKey);
+                using (WaitForm frm = new WaitForm(Global.Init))
+                {
+                    frm.Token = sessionKey;
+                    frm.ShowDialog(this);
+                }
                 
             }
         }

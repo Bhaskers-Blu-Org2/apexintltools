@@ -253,6 +253,10 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                             }                          
                         }
                     }
+                    else
+                    {
+                        pictureBox_Base.Image = Properties.Resources.NotFound;
+                    }
 
                     if (!key.ToLower().EndsWith(".otp"))
                     {
@@ -335,18 +339,38 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             locCaptureNames = new List<string>();
             if (Global.LocTreeItem != null)
             {
-                foreach (GithubTreeItem child in Global.LocTreeItem.Children)
+                //foreach (GithubTreeItem child in Global.LocTreeItem.Children)
+                //{
+                //    if (!child.Item.isFolder)
+                //    {
+                //        if (System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".otp" || System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".png" ||
+                //            System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".jpg" )
+                //        {
+                //            locCaptures.Add(child.Item.Name.ToLower(), child.Item);
+                //        }
+                //    }
+                //}
+                loadCaptures(Global.LocTreeItem, locCaptures, Global.LocTreeItem.Item.Name);
+                locCaptureNames = locCaptures.Keys.ToList<string>();
+            }
+        }
+
+        private void loadCaptures(GithubTreeItem item,Dictionary<string,GithubFolderOrFile> captures, string folder)
+        {
+            foreach (GithubTreeItem child in item.Children)
+            {
+                if (!child.Item.isFolder)
                 {
-                    if (!child.Item.isFolder)
+                    if (System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".otp" || System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".png" ||
+                        System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".jpg")
                     {
-                        if (System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".otp" || System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".png" ||
-                            System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".jpg" )
-                        {
-                            locCaptures.Add(child.Item.Name.ToLower(), child.Item);
-                        }
+                        captures.Add(folder+"\\"+child.Item.Name.ToLower(), child.Item);
                     }
                 }
-                locCaptureNames = locCaptures.Keys.ToList<string>();
+                else
+                {
+                    loadCaptures(child,captures,folder+"\\"+child.Item.Name);
+                }
             }
         }
 
@@ -355,18 +379,19 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             enuCaptures = new Dictionary<string, GithubFolderOrFile>();
             if (Global.ENUTreeItem != null)
             {
-                foreach (GithubTreeItem child in Global.ENUTreeItem.Children)
-                {
-                    if (!child.Item.isFolder)
-                    {
-                        if (System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".otp" || System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".png" ||
-                            System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".jpg" )
-                        {
-                            enuCaptures.Add(child.Item.Name.ToLower(), child.Item);
-                        }
-                        
-                    }
-                }
+                //foreach (GithubTreeItem child in Global.ENUTreeItem.Children)
+                //{
+                //    if (!child.Item.isFolder)
+                //    {
+                //        if (System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".otp" || System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".png" ||
+                //            System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".jpg" )
+                //        {
+                //            enuCaptures.Add(child.Item.Name.ToLower(), child.Item);
+                //        }
+
+                //    }
+                //}
+                loadCaptures(Global.ENUTreeItem, enuCaptures, Global.ENUTreeItem.Item.Name);
             }
         }
 

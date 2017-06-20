@@ -201,6 +201,14 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     setupSubFolderTreeView(rootItem, child);
                 }
             }
+
+            for(int i=rootItem.Nodes.Count-1;i>=0;i--)
+            {
+                if (rootItem.Nodes[i].Nodes.Count==0)
+                {
+                    rootItem.Nodes[i].Remove();
+                }
+            }
             return rootItem;
 
         }
