@@ -344,7 +344,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             else
             {
                 currentCaptureIndex = -1;
-                MessageBox.Show("No captures found under the selected folder. Please check whether you have set the access correctly for the Github token.", Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.Messages.Main_NoCaptureFoundError_Message, Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

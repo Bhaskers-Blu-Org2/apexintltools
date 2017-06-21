@@ -144,6 +144,9 @@
   <data name="LookupCapture_CaptureNotFind_Message" xml:space="preserve">
     <value>Can't find the file in the selected folder.</value>
   </data>
+  <data name="Main_NoCaptureFoundError_Message" xml:space="preserve">
+    <value>No captures found under the selected folder. Please check whether you have set the access correctly for the Github token.</value>
+  </data>
   <data name="NewIssue_EmptyDescription_Message" xml:space="preserve">
     <value>Description is empty!</value>
   </data>

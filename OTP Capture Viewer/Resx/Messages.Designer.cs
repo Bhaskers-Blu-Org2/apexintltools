@@ -142,6 +142,15 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No captures found under the selected folder. Please check whether you have set the access correctly for the Github token..
+        /// </summary>
+        internal static string Main_NoCaptureFoundError_Message {
+            get {
+                return ResourceManager.GetString("Main_NoCaptureFoundError_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description is empty!.
         /// </summary>
         internal static string NewIssue_EmptyDescription_Message {
