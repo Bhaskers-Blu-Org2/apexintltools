@@ -1256,6 +1256,20 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             frm.ViewMode = true;
             frm.ShowDialog();
         }
+
+        private void toolstripButtonFind_Click(object sender, EventArgs e)
+        {
+            using (LookupCapture frm = new LookupCapture())
+            {
+                frm.LocCaptureNames = locCaptureNames;
+                if (frm.ShowDialog()==DialogResult.OK)
+                {
+                    string fileName = frm.SelectedName;
+                    currentCaptureIndex = locCaptureNames.IndexOf(fileName);
+                    showCapture();
+                }
+            }
+        }
     }
 
 

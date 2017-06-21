@@ -23,12 +23,12 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             Worker = worker;
         }
 
-        public string Token { get; set; }
+        public string Parameter { get; set; }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            Task.Factory.StartNew(()=> { Worker(Token); }).ContinueWith(t => { this.Close(); },TaskScheduler.FromCurrentSynchronizationContext());
+            Task.Factory.StartNew(()=> { Worker(Parameter); }).ContinueWith(t => { this.Close(); },TaskScheduler.FromCurrentSynchronizationContext());
         }
     }
 }

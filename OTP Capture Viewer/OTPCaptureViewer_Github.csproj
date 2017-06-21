@@ -119,6 +119,12 @@
     <Compile Include="Entity\UIScreenshot.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="ImageUtility.cs" />
+    <Compile Include="LookupCapture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LookupCapture.Designer.cs">
+      <DependentUpon>LookupCapture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     <EmbeddedResource Include="EulaForm.resx">
       <DependentUpon>EulaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LookupCapture.resx">
+      <DependentUpon>LookupCapture.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +245,7 @@
   <ItemGroup>
     <Content Include="ImageFolder\AddComment.png" />
     <Content Include="ImageFolder\Edit.png" />
+    <Content Include="ImageFolder\Find.PNG" />
     <Content Include="ImageFolder\font.png" />
     <Content Include="ImageFolder\Help.png" />
     <Content Include="ImageFolder\Load.jpg" />

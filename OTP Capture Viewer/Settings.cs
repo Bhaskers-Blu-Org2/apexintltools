@@ -151,7 +151,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             {
                 using (WaitForm frm = new WaitForm(Global.Init))
                 {
-                    frm.Token = sessionKey;
+                    frm.Parameter = sessionKey;
                     frm.ShowDialog(this);
                 }
                 

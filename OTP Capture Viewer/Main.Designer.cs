@@ -46,6 +46,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPrev = new System.Windows.Forms.ToolStripButton();
             this.btnNext = new System.Windows.Forms.ToolStripButton();
+            this.toolstripButtonFind = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.endUserLisenceAgreementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,6 +125,7 @@
             this.toolStripSeparator3,
             this.btnPrev,
             this.btnNext,
+            this.toolstripButtonFind,
             this.toolStripSeparator4,
             this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -268,6 +270,16 @@
             this.btnNext.Size = new System.Drawing.Size(23, 22);
             this.btnNext.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_ToolBar_Next_Text;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // toolstripButtonFind
+            // 
+            this.toolstripButtonFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolstripButtonFind.Image = global::Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.Find;
+            this.toolstripButtonFind.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolstripButtonFind.Name = "toolstripButtonFind";
+            this.toolstripButtonFind.Size = new System.Drawing.Size(23, 22);
+            this.toolstripButtonFind.Text = "toolStripButton1";
+            this.toolstripButtonFind.Click += new System.EventHandler(this.toolstripButtonFind_Click);
             // 
             // toolStripSeparator4
             // 
@@ -721,6 +733,7 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem endUserLisenceAgreementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolstripButtonFind;
     }
 }
 
