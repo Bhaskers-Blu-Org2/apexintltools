@@ -41,7 +41,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Capture File Name:";
+            this.label1.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.LookupCapture_CaptureName_lblText;
             // 
             // txtFileName
             // 
@@ -56,7 +56,7 @@
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 23);
             this.btnFind.TabIndex = 2;
-            this.btnFind.Text = "Search";
+            this.btnFind.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.LookupCapture_SearchBtn_Text;
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
@@ -66,7 +66,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.LookupCapture_CancelBtn_Text;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -83,6 +83,7 @@
             this.Name = "LookupCapture";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Lookup Capture";
+            this.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.LookupCapture_Title_Text;
             this.ResumeLayout(false);
             this.PerformLayout();
 

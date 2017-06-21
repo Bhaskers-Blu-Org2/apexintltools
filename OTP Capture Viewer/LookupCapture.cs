@@ -52,7 +52,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             List<string> findNames = v.ToList<string>();
             if (findNames.Count==0)
             {
-                MessageBox.Show("Can't find the file in the selected folder.", Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("", Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
