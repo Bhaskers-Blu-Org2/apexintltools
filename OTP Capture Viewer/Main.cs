@@ -332,12 +332,20 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
             Task.WaitAll(task1, task2);
 
-            currentCaptureIndex = 0;
-            showCapture();
+            if (locCaptureNames.Count > 0)
+            {
+                currentCaptureIndex = 0;
+                showCapture();
 
-            setToolButtons(true);
+                setToolButtons(true);
 
-            setPreNextButtonEnable();
+                setPreNextButtonEnable();
+            }
+            else
+            {
+                currentCaptureIndex = -1;
+                MessageBox.Show("No captures found under the selected folder. Please check whether you have set the access correctly for the Github token.", Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void loadLocCaptures()
@@ -942,8 +950,11 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void pictureBox_Good_Click_1(object sender, EventArgs e)
         {
-            createResultNote(true);
-            moveNext();
+            if (currentCaptureIndex >= 0)
+            {
+                createResultNote(true);
+                moveNext();
+            }
         }
 
         private void pictureBox_Wrong_Click(object sender, EventArgs e)
