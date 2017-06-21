@@ -106,6 +106,15 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string EulaForm_CloseButton_Text {
+            get {
+                return ResourceManager.GetString("EulaForm_CloseButton_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;Decline.
         /// </summary>
         internal static string EulaForm_DeclineButton_Text {
@@ -129,6 +138,42 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         internal static string EulaForm_EulaText {
             get {
                 return ResourceManager.GetString("EulaForm_EulaText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string LookupCapture_CancelBtn_Text {
+            get {
+                return ResourceManager.GetString("LookupCapture_CancelBtn_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture File Name:.
+        /// </summary>
+        internal static string LookupCapture_CaptureName_lblText {
+            get {
+                return ResourceManager.GetString("LookupCapture_CaptureName_lblText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        internal static string LookupCapture_SearchBtn_Text {
+            get {
+                return ResourceManager.GetString("LookupCapture_SearchBtn_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lookup Capture.
+        /// </summary>
+        internal static string LookupCapture_Title_Text {
+            get {
+                return ResourceManager.GetString("LookupCapture_Title_Text", resourceCulture);
             }
         }
         
@@ -250,7 +295,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reference Capture.
+        ///   Looks up a localized string similar to Reference Capture:.
         /// </summary>
         internal static string Main_PictureBox_ReferenceCapture_Text {
             get {
@@ -259,7 +304,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Review Capture.
+        ///   Looks up a localized string similar to Review Capture:.
         /// </summary>
         internal static string Main_PictureBox_ReviewCapture_Text {
             get {
@@ -273,6 +318,15 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         internal static string Main_ToolBar_About_Text {
             get {
                 return ResourceManager.GetString("Main_ToolBar_About_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End User Lisence Agreement.
+        /// </summary>
+        internal static string Main_ToolBar_EULA_Text {
+            get {
+                return ResourceManager.GetString("Main_ToolBar_EULA_Text", resourceCulture);
             }
         }
         
@@ -399,6 +453,33 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         internal static string Main_toolStrip_Text {
             get {
                 return ResourceManager.GetString("Main_toolStrip_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to toolStrip1.
+        /// </summary>
+        internal static string Main_ToolStrip1_Text {
+            get {
+                return ResourceManager.GetString("Main_ToolStrip1_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to toolStripButton1.
+        /// </summary>
+        internal static string Main_toolStripButton1_Text {
+            get {
+                return ResourceManager.GetString("Main_toolStripButton1_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to toolStripDropDownButton1.
+        /// </summary>
+        internal static string Main_toolStripDropDownButton1_Text {
+            get {
+                return ResourceManager.GetString("Main_toolStripDropDownButton1_Text", resourceCulture);
             }
         }
         

@@ -847,7 +847,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     ele.SetAttribute("Language", language);
                     root.AppendChild(ele);
                 }
-                lblResult.Text = passed ? "Pass" : "Fail";
+                lblResult.Text = passed ? global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Pass_LabelText : global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Fail_LabelText;
                 if (!Directory.Exists(Path.GetDirectoryName(resultFile)))
                 {
                     Directory.CreateDirectory(Path.GetDirectoryName(resultFile));

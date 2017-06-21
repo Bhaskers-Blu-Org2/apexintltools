@@ -181,10 +181,10 @@
     <value>Title</value>
   </data>
   <data name="Main_PictureBox_ReferenceCapture_Text" xml:space="preserve">
-    <value>Reference Capture</value>
+    <value>Reference Capture:</value>
   </data>
   <data name="Main_PictureBox_ReviewCapture_Text" xml:space="preserve">
-    <value>Review Capture</value>
+    <value>Review Capture:</value>
   </data>
   <data name="Main_ToolBar_About_Text" xml:space="preserve">
     <value>About</value>
@@ -353,5 +353,32 @@
   </data>
   <data name="WaitForm_Processing_Text" xml:space="preserve">
     <value>Processing...</value>
+  </data>
+  <data name="LookupCapture_CancelBtn_Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LookupCapture_CaptureName_lblText" xml:space="preserve">
+    <value>Capture File Name:</value>
+  </data>
+  <data name="LookupCapture_SearchBtn_Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="LookupCapture_Title_Text" xml:space="preserve">
+    <value>Lookup Capture</value>
+  </data>
+  <data name="Main_ToolStrip1_Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="EulaForm_CloseButton_Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Main_ToolBar_EULA_Text" xml:space="preserve">
+    <value>End User Lisence Agreement</value>
+  </data>
+  <data name="Main_toolStripButton1_Text" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="Main_toolStripDropDownButton1_Text" xml:space="preserve">
+    <value>toolStripDropDownButton1</value>
   </data>
 </root>

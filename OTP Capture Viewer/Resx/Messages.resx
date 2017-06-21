@@ -141,6 +141,9 @@
   <data name="LoadCapture_NoScreenshotFound_Message" xml:space="preserve">
     <value>No screenshots found!</value>
   </data>
+  <data name="LookupCapture_CaptureNotFind_Message" xml:space="preserve">
+    <value>Can't find the file in the selected folder.</value>
+  </data>
   <data name="NewIssue_EmptyDescription_Message" xml:space="preserve">
     <value>Description is empty!</value>
   </data>

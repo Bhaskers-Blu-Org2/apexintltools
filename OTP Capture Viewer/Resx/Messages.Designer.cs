@@ -133,6 +133,15 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t find the file in the selected folder..
+        /// </summary>
+        internal static string LookupCapture_CaptureNotFind_Message {
+            get {
+                return ResourceManager.GetString("LookupCapture_CaptureNotFind_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description is empty!.
         /// </summary>
         internal static string NewIssue_EmptyDescription_Message {
