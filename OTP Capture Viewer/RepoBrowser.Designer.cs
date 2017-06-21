@@ -85,6 +85,8 @@
             this.githubTreeView.Name = "githubTreeView";
             this.githubTreeView.Size = new System.Drawing.Size(507, 380);
             this.githubTreeView.TabIndex = 0;
+            this.githubTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.githubTreeView_BeforeExpand);
+            this.githubTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.githubTreeView_NodeMouseClick);
             // 
             // RepoBrowser
             // 
@@ -94,7 +96,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "RepoBrowser";
-            this.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.RepoBrowser_DialogTitle_Text;
+            this.Text = "Browse folder";
             this.Load += new System.EventHandler(this.RepoBrowser_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

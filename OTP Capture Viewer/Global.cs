@@ -27,6 +27,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         internal static CaptureFolderInfo ReviewCaptureFolderInfo = null;
         internal static CaptureFolderInfo ReferenceCaptureFolderInfo = null;
         internal static bool SaveReferenceCaptureSxS = true;
+       
         //internal static string ReviewFolderPath = @"\Review";
         static string token = "";
         internal static string GithubToken
@@ -83,7 +84,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 if (RootItem != null)
                 {
                     RootNode = OTPUtility.GetGithubFoldersTreeView(RootItem);
-                    RepoIssues = OTPUtility.GetAllIssues();
+                    Task.Factory.StartNew(() => { RepoIssues = OTPUtility.GetAllIssues(); });
                     MessageBox.Show(global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.Messages.GitHub_Connect_Message, Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

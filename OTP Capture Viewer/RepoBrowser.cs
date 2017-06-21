@@ -99,5 +99,37 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             }
             
         }
+
+        private void githubTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
+        {
+            //TreeNode selectedNode = e.Node;
+            //if (selectedNode.Nodes.Count == 1 && selectedNode.Nodes[0].Text == "Opening...")
+            //{
+            //    selectedNode.Nodes.Clear();
+            //    GithubTreeItem selectedItem = selectedNode.Tag as GithubTreeItem;
+            //    if (selectedItem!=null)
+            //    {
+            //        OTPUtility.SetupSubFolderTreeView(selectedNode, selectedItem);
+            //        //githubTreeView.Refresh();
+                    
+            //    }
+            //}
+        }
+
+        private void githubTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            TreeNode selectedNode = e.Node;
+            if (selectedNode.Nodes.Count == 1 && selectedNode.Nodes[0].Text == "Opening...")
+            {
+                selectedNode.Nodes.Clear();
+                GithubTreeItem selectedItem = selectedNode.Tag as GithubTreeItem;
+                if (selectedItem != null)
+                {
+                    OTPUtility.SetupSubFolderTreeView(selectedNode, selectedItem);
+                    //githubTreeView.Refresh();
+
+                }
+            }
+        }
     }
 }

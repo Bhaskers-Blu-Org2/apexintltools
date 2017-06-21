@@ -261,7 +261,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     else
                     {
                         pictureBox_Base.Image = Properties.Resources.NotFound;
-                        
+                        baseImage= Properties.Resources.NotFound;
                     }
 
                     if (!key.ToLower().EndsWith(".otp"))

@@ -107,18 +107,19 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             {
                 for (int i = 0; i < treeResponses.Tree.Count; i++)
                 {
-                    if (treeResponses.Tree[i].Type == TreeType.Blob)
-                    {
-                        GithubFolderOrFile file = new GithubFolderOrFile();
-                        file.Name = treeResponses.Tree[i].Path;
-                        if (isSupportedFile(file.Name))
-                        {
-                            file.Path = Path.Combine(parent.Item.Path, treeResponses.Tree[i].Path);
-                            file.Sha = treeResponses.Tree[i].Sha;
-                            parent.Children.Add(new GithubTreeItem(file));
-                        }
-                    }
-                    else if (treeResponses.Tree[i].Type == TreeType.Tree)
+                    //if (treeResponses.Tree[i].Type == TreeType.Blob)
+                    //{
+                    //    GithubFolderOrFile file = new GithubFolderOrFile();
+                    //    file.Name = treeResponses.Tree[i].Path;
+                    //    if (isSupportedFile(file.Name))
+                    //    {
+                    //        file.Path = Path.Combine(parent.Item.Path, treeResponses.Tree[i].Path);
+                    //        file.Sha = treeResponses.Tree[i].Sha;
+                    //        parent.Children.Add(new GithubTreeItem(file));
+                    //    }
+                    //}
+                    //else if (treeResponses.Tree[i].Type == TreeType.Tree)
+                    if (treeResponses.Tree[i].Type == TreeType.Tree)
                     {
                         GithubFolderOrFile folder = new GithubFolderOrFile();
                         folder.Name= treeResponses.Tree[i].Path;
@@ -127,12 +128,9 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                         folder.Sha = treeResponses.Tree[i].Sha;
                         GithubTreeItem item = new GithubTreeItem(folder);
                         parent.Children.Add(item);
-                        createSubTreeItem(treeResponses.Tree[i],item);
+                        //createSubTreeItem(treeResponses.Tree[i],item);
                     }
-                    else
-                    {
-
-                    }
+                    
 
                     
                 }
@@ -155,7 +153,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             if (parentTreeItem != null && !string.IsNullOrEmpty(parentTreeItem.Sha))
             {
                 Task<TreeResponse> treeResponse =
-                        Global.GitHubClient.Git.Tree.Get(Global.Owner,Global.Name, parentTreeItem.Sha);
+                        Global.GitHubClient.Git.Tree.Get(Global.Owner,Global.Name, parent.Item.Sha);
                 treeResponse.Wait();
                 var treeResponses = treeResponse.Result;
 
@@ -169,7 +167,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                             file.Name = treeResponses.Tree[i].Path;
                             if (isSupportedFile(file.Name))
                             {
-                                file.Path = parent.Item.Path + "\\" + file.Name ;
+                                file.Path = parent.Item.Path + "\\" + file.Name;
                                 file.Sha = treeResponses.Tree[i].Sha;
                                 parent.Children.Add(new GithubTreeItem(file));
                             }
@@ -183,7 +181,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                             folder.Sha = treeResponses.Tree[i].Sha;
                             GithubTreeItem item = new GithubTreeItem(folder);
                             parent.Children.Add(item);
-                            createSubTreeItem(treeResponses.Tree[i], item);
+                            //createSubTreeItem(treeResponses.Tree[i], item);
                         }
                     }
                 }
@@ -198,33 +196,71 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             {
                 if (child.Item.isFolder)
                 {
-                    setupSubFolderTreeView(rootItem, child);
+                    //SetupSubFolderTreeView(rootItem, child);
+                    TreeNode node = new TreeNode(child.Item.Name);
+                    node.Tag = child;
+                    node.Nodes.Add(new TreeNode("Opening..."));
+                    rootItem.Nodes.Add(node);
                 }
             }
 
-            for(int i=rootItem.Nodes.Count-1;i>=0;i--)
-            {
-                if (rootItem.Nodes[i].Nodes.Count==0)
-                {
-                    rootItem.Nodes[i].Remove();
-                }
-            }
+            //for(int i=rootItem.Nodes.Count-1;i>=0;i--)
+            //{
+            //    if (rootItem.Nodes[i].Nodes.Count==0)
+            //    {
+            //        rootItem.Nodes[i].Remove();
+            //    }
+            //}
             return rootItem;
 
         }
 
-        static void setupSubFolderTreeView(TreeNode parent, GithubTreeItem item)
+        static internal void SetupSubFolderTreeView(TreeNode parent, GithubTreeItem parentItem)
         {
-            TreeNode node = new TreeNode(item.Item.Name);
-            node.Tag = item;
-            foreach(GithubTreeItem child in item.Children)
+            Task<TreeResponse> treeResponse =
+                        Global.GitHubClient.Git.Tree.Get(Global.Owner, Global.Name, parentItem.Item.Sha);
+            treeResponse.Wait();
+            var treeResponses = treeResponse.Result;
+
+            if (treeResponses != null && treeResponses.Tree.Count > 0)
             {
-                if (child.Item.isFolder)
+                for (int i = 0; i < treeResponses.Tree.Count; i++)
                 {
-                    setupSubFolderTreeView(node, child);
+                    GithubTreeItem child = null;
+                    if (treeResponses.Tree[i].Type == TreeType.Blob)
+                    {
+                        GithubFolderOrFile file = new GithubFolderOrFile();
+                        file.Name = treeResponses.Tree[i].Path;
+                        if (isSupportedFile(file.Name))
+                        {
+                            file.Path = parentItem.Item.Path + "\\" + file.Name;
+                            file.Sha = treeResponses.Tree[i].Sha;
+                            child = new GithubTreeItem(file);
+                        }
+                        parentItem.Children.Add(child);
+                    }
+                    else if (treeResponses.Tree[i].Type == TreeType.Tree)
+                    {
+                        GithubFolderOrFile folder = new GithubFolderOrFile();
+                        folder.Name = treeResponses.Tree[i].Path;
+                        folder.Path = parentItem.Item.Path + "\\" + folder.Name;
+                        folder.isFolder = true;
+                        folder.Sha = treeResponses.Tree[i].Sha;
+                        child = new GithubTreeItem(folder);
+                        parentItem.Children.Add(child);
+                        //parent.Children.Add(item);
+                        //createSubTreeItem(treeResponses.Tree[i], item);
+                    }
+
+                    if (child != null && child.Item.isFolder)
+                    {
+                        TreeNode node = new TreeNode(child.Item.Name);
+                        node.Tag = child;
+                        node.Nodes.Add(new TreeNode("Opening..."));
+                        parent.Nodes.Add(node);
+                    }
                 }
-            }
-            parent.Nodes.Add(node);
+            }            
         }
 
         internal static Issue CreateIssue(string language, string title, string description, string captureName)
