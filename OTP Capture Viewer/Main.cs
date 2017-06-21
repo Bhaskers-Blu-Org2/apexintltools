@@ -150,6 +150,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             this.btnStart.Enabled = !isStarted;
             this.btnText.Enabled = isStarted;
             this.btnIssue.Enabled = isStarted;
+            toolstripButtonFind.Enabled = isStarted;
         }
 
         private void createTempFolder()
@@ -185,9 +186,9 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             originHeight = 0;
             originWidth = 0;
 
-            if (locCaptures.Count>0)
+            if (locCaptures.Keys.Count>0)
             {
-                if (currentCaptureIndex < locCaptures.Count)
+                if (currentCaptureIndex < locCaptures.Keys.Count && currentCaptureIndex<locCaptureNames.Count)
                 {
                     string key = locCaptureNames[currentCaptureIndex];
                     GithubFolderOrFile item = locCaptures[key];
@@ -947,11 +948,14 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void pictureBox_Wrong_Click(object sender, EventArgs e)
         {
-            if (createIssue())
+            if (currentCaptureIndex >= 0)
             {
-                //openNewIssuePage();
-                createResultNote(false);
-                moveNext();
+                if (createIssue())
+                {
+                    //openNewIssuePage();
+                    createResultNote(false);
+                    moveNext();
+                }
             }
         }
 

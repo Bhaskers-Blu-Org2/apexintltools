@@ -81,6 +81,7 @@
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.label1);
             this.Name = "LookupCapture";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Lookup Capture";
             this.ResumeLayout(false);
             this.PerformLayout();
