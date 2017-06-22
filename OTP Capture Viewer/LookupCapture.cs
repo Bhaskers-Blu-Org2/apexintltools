@@ -52,7 +52,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             List<string> findNames = v.ToList<string>();
             if (findNames.Count==0)
             {
-                MessageBox.Show("", Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resx.Messages.LookupCapture_CaptureNotFind_Message, Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

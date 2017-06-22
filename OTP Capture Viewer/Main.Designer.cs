@@ -54,13 +54,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pCapture = new System.Windows.Forms.Panel();
             this.splitContainerCapture = new System.Windows.Forms.SplitContainer();
-            this.pictureBox_Review = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pReviewInfo = new System.Windows.Forms.Panel();
             this.lblResult = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox_Base = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pENUInfo = new System.Windows.Forms.Panel();
@@ -86,6 +84,10 @@
             this.exactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.containsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anyWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pReview = new System.Windows.Forms.Panel();
+            this.pictureBox_Review = new System.Windows.Forms.PictureBox();
+            this.pRef = new System.Windows.Forms.Panel();
+            this.pictureBox_Base = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pCapture.SuspendLayout();
@@ -93,10 +95,8 @@
             this.splitContainerCapture.Panel1.SuspendLayout();
             this.splitContainerCapture.Panel2.SuspendLayout();
             this.splitContainerCapture.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Review)).BeginInit();
             this.contextMenuStrip3.SuspendLayout();
             this.pReviewInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Base)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.pENUInfo.SuspendLayout();
             this.pButton.SuspendLayout();
@@ -105,6 +105,10 @@
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Wrong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Good)).BeginInit();
+            this.pReview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Review)).BeginInit();
+            this.pRef.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Base)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -132,7 +136,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1264, 25);
             this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_ToolStrip1_Text;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // btnSetting
             // 
@@ -344,7 +348,7 @@
             // 
             this.splitContainerCapture.Panel1.AutoScroll = true;
             this.splitContainerCapture.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(222)))), ((int)(((byte)(252)))));
-            this.splitContainerCapture.Panel1.Controls.Add(this.pictureBox_Review);
+            this.splitContainerCapture.Panel1.Controls.Add(this.pReview);
             this.splitContainerCapture.Panel1.Controls.Add(this.pReviewInfo);
             this.splitContainerCapture.Panel1.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.splitContainerCapture.Panel1.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
@@ -353,24 +357,11 @@
             // 
             this.splitContainerCapture.Panel2.AutoScroll = true;
             this.splitContainerCapture.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.splitContainerCapture.Panel2.Controls.Add(this.pictureBox_Base);
+            this.splitContainerCapture.Panel2.Controls.Add(this.pRef);
             this.splitContainerCapture.Panel2.Controls.Add(this.pENUInfo);
             this.splitContainerCapture.Size = new System.Drawing.Size(1131, 493);
             this.splitContainerCapture.SplitterDistance = 570;
             this.splitContainerCapture.TabIndex = 1;
-            // 
-            // pictureBox_Review
-            // 
-            this.pictureBox_Review.ContextMenuStrip = this.contextMenuStrip3;
-            this.pictureBox_Review.Location = new System.Drawing.Point(9, 44);
-            this.pictureBox_Review.Name = "pictureBox_Review";
-            this.pictureBox_Review.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox_Review.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox_Review.TabIndex = 1;
-            this.pictureBox_Review.TabStop = false;
-            this.pictureBox_Review.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Review_MouseDown);
-            this.pictureBox_Review.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Review_MouseMove);
-            this.pictureBox_Review.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Review_MouseUp);
             // 
             // contextMenuStrip3
             // 
@@ -412,18 +403,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_PictureBox_ReviewCapture_Text;
-            // 
-            // pictureBox_Base
-            // 
-            this.pictureBox_Base.ContextMenuStrip = this.contextMenuStrip1;
-            this.pictureBox_Base.Location = new System.Drawing.Point(6, 44);
-            this.pictureBox_Base.Name = "pictureBox_Base";
-            this.pictureBox_Base.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox_Base.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox_Base.TabIndex = 1;
-            this.pictureBox_Base.TabStop = false;
-            this.pictureBox_Base.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Base_MouseMove);
+            this.label1.Text = "Review Capture:";
             // 
             // contextMenuStrip1
             // 
@@ -458,7 +438,7 @@
             this.label2.Size = new System.Drawing.Size(136, 18);
             this.label2.TabIndex = 1;
             this.label2.Tag = ",";
-            this.label2.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_PictureBox_ReferenceCapture_Text;
+            this.label2.Text = "Reference Capture:";
             // 
             // pButton
             // 
@@ -544,7 +524,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_IssueList_Issues_LabelText;
+            this.label4.Text = "Issues:";
             // 
             // pLeft
             // 
@@ -568,7 +548,7 @@
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(133, 22);
             this.statusStrip1.TabIndex = 10;
-            this.statusStrip1.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CurrentTotal_LabelText;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // currentTotalLabel
             // 
@@ -603,9 +583,9 @@
             this.lb_Wrong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Wrong.Location = new System.Drawing.Point(12, 420);
             this.lb_Wrong.Name = "lb_Wrong";
-            this.lb_Wrong.Size = new System.Drawing.Size(31, 18);
+            this.lb_Wrong.Size = new System.Drawing.Size(26, 18);
             this.lb_Wrong.TabIndex = 7;
-            this.lb_Wrong.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Fail_LabelText;
+            this.lb_Wrong.Text = "fail";
             // 
             // lb_Good
             // 
@@ -613,9 +593,9 @@
             this.lb_Good.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Good.Location = new System.Drawing.Point(12, 253);
             this.lb_Good.Name = "lb_Good";
-            this.lb_Good.Size = new System.Drawing.Size(42, 18);
+            this.lb_Good.Size = new System.Drawing.Size(40, 18);
             this.lb_Good.TabIndex = 5;
-            this.lb_Good.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Pass_LabelText;
+            this.lb_Good.Text = "pass";
             // 
             // exactToolStripMenuItem
             // 
@@ -631,6 +611,48 @@
             // 
             this.anyWordToolStripMenuItem.Name = "anyWordToolStripMenuItem";
             this.anyWordToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
+            // pReview
+            // 
+            this.pReview.AutoScroll = true;
+            this.pReview.Controls.Add(this.pictureBox_Review);
+            this.pReview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pReview.Location = new System.Drawing.Point(2, 38);
+            this.pReview.Name = "pReview";
+            this.pReview.Size = new System.Drawing.Size(564, 451);
+            this.pReview.TabIndex = 1;
+            this.pReview.Scroll += new System.Windows.Forms.ScrollEventHandler(this.pReview_Scroll);
+            // 
+            // pictureBox_Review
+            // 
+            this.pictureBox_Review.ContextMenuStrip = this.contextMenuStrip3;
+            this.pictureBox_Review.Location = new System.Drawing.Point(5, 6);
+            this.pictureBox_Review.Name = "pictureBox_Review";
+            this.pictureBox_Review.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox_Review.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_Review.TabIndex = 2;
+            this.pictureBox_Review.TabStop = false;
+            // 
+            // pRef
+            // 
+            this.pRef.AutoScroll = true;
+            this.pRef.Controls.Add(this.pictureBox_Base);
+            this.pRef.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pRef.Location = new System.Drawing.Point(0, 38);
+            this.pRef.Name = "pRef";
+            this.pRef.Size = new System.Drawing.Size(553, 451);
+            this.pRef.TabIndex = 1;
+            this.pRef.Scroll += new System.Windows.Forms.ScrollEventHandler(this.pRef_Scroll);
+            // 
+            // pictureBox_Base
+            // 
+            this.pictureBox_Base.ContextMenuStrip = this.contextMenuStrip1;
+            this.pictureBox_Base.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox_Base.Name = "pictureBox_Base";
+            this.pictureBox_Base.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox_Base.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_Base.TabIndex = 2;
+            this.pictureBox_Base.TabStop = false;
             // 
             // Main
             // 
@@ -649,16 +671,12 @@
             this.panel1.ResumeLayout(false);
             this.pCapture.ResumeLayout(false);
             this.splitContainerCapture.Panel1.ResumeLayout(false);
-            this.splitContainerCapture.Panel1.PerformLayout();
             this.splitContainerCapture.Panel2.ResumeLayout(false);
-            this.splitContainerCapture.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerCapture)).EndInit();
             this.splitContainerCapture.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Review)).EndInit();
             this.contextMenuStrip3.ResumeLayout(false);
             this.pReviewInfo.ResumeLayout(false);
             this.pReviewInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Base)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.pENUInfo.ResumeLayout(false);
             this.pENUInfo.PerformLayout();
@@ -671,6 +689,12 @@
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Wrong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Good)).EndInit();
+            this.pReview.ResumeLayout(false);
+            this.pReview.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Review)).EndInit();
+            this.pRef.ResumeLayout(false);
+            this.pRef.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Base)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -703,8 +727,6 @@
         private System.Windows.Forms.Panel pENUInfo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pButton;
-        private System.Windows.Forms.PictureBox pictureBox_Review;
-        private System.Windows.Forms.PictureBox pictureBox_Base;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.PictureBox pictureBox_Good;
         private System.Windows.Forms.PictureBox pictureBox_Wrong;
@@ -734,6 +756,10 @@
         private System.Windows.Forms.ToolStripMenuItem endUserLisenceAgreementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolstripButtonFind;
+        private System.Windows.Forms.Panel pReview;
+        private System.Windows.Forms.PictureBox pictureBox_Review;
+        private System.Windows.Forms.Panel pRef;
+        private System.Windows.Forms.PictureBox pictureBox_Base;
     }
 }
 

@@ -58,6 +58,7 @@
             this.tb_Input.Location = new System.Drawing.Point(12, 12);
             this.tb_Input.Multiline = true;
             this.tb_Input.Name = "tb_Input";
+            this.tb_Input.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_Input.Size = new System.Drawing.Size(328, 135);
             this.tb_Input.TabIndex = 3;
             // 
@@ -69,8 +70,10 @@
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Submit);
             this.Controls.Add(this.tb_Input);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "TextForm";
-            this.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.TextForm_DialogTitle_Text;
+            this.Text = "Input Text";
             this.ResumeLayout(false);
             this.PerformLayout();
 

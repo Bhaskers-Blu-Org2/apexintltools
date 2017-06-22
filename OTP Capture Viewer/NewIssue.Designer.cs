@@ -48,6 +48,7 @@
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.toggleButtonBulletList = new Telerik.WinControls.UI.CommandBarToggleButton();
             this.toggleButtonNumberedList = new Telerik.WinControls.UI.CommandBarToggleButton();
+            this.commandBarRowElement2 = new Telerik.WinControls.UI.CommandBarRowElement();
             ((System.ComponentModel.ISupportInitialize)(this.txtDes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleButtonBar)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_IssueTitle_LabelText;
+            this.label1.Text = "Title:";
             // 
             // txtTitle
             // 
@@ -75,7 +76,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_IssueDescription_LabelText;
+            this.label2.Text = "Description:";
             // 
             // txtDes
             // 
@@ -117,7 +118,6 @@
             this.commandBarRowElement1});
             this.toggleButtonBar.Size = new System.Drawing.Size(658, 55);
             this.toggleButtonBar.TabIndex = 6;
-            this.toggleButtonBar.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_toggleButtonBar_Text;
             // 
             // commandBarRowElement1
             // 
@@ -147,26 +147,26 @@
             this.toggleButtonBold.DisplayName = "Bold";
             this.toggleButtonBold.Image = global::Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.Bold;
             this.toggleButtonBold.Name = "toggleButtonBold";
-            this.toggleButtonBold.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_toggleButtonBold_Text;
+            this.toggleButtonBold.Text = "";
             // 
             // toggleButtonItalic
             // 
             this.toggleButtonItalic.DisplayName = "Italic";
             this.toggleButtonItalic.Image = global::Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.Italic;
             this.toggleButtonItalic.Name = "toggleButtonItalic";
-            this.toggleButtonItalic.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_toggleButtonItalic_Text;
+            this.toggleButtonItalic.Text = "";
             // 
             // toggleButtonUnderline
             // 
             this.toggleButtonUnderline.DisplayName = "Underline";
             this.toggleButtonUnderline.Image = global::Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.Underline;
             this.toggleButtonUnderline.Name = "toggleButtonUnderline";
-            this.toggleButtonUnderline.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_toggleButtonUnderline_Text;
+            this.toggleButtonUnderline.Text = "";
             // 
             // commandBarSeparator1
             // 
             this.commandBarSeparator1.DisplayName = "Separator1";
-            this.commandBarSeparator1.Name = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_Separator1_Text;
+            this.commandBarSeparator1.Name = "commandBarSeparator1";
             this.commandBarSeparator1.VisibleInOverflowMenu = false;
             // 
             // toggleButtonAlignLeft
@@ -174,28 +174,28 @@
             this.toggleButtonAlignLeft.DisplayName = "AlignLeft";
             this.toggleButtonAlignLeft.Image = global::Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.AlignLeft;
             this.toggleButtonAlignLeft.Name = "toggleButtonAlignLeft";
-            this.toggleButtonAlignLeft.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_toggleButtonAlignLeft_Text;
+            this.toggleButtonAlignLeft.Text = "";
             // 
             // toggleButtonAlignCenter
             // 
             this.toggleButtonAlignCenter.DisplayName = "AlignCenter";
             this.toggleButtonAlignCenter.Image = global::Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.AlignCenter;
             this.toggleButtonAlignCenter.Name = "toggleButtonAlignCenter";
-            this.toggleButtonAlignCenter.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_toggleButtonAlignCenter_Text;
+            this.toggleButtonAlignCenter.Text = "";
             // 
             // toggleButtonAlignRight
             // 
             this.toggleButtonAlignRight.DisplayName = "AlignRight";
             this.toggleButtonAlignRight.Image = global::Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.AlignRight;
             this.toggleButtonAlignRight.Name = "toggleButtonAlignRight";
-            this.toggleButtonAlignRight.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_toggleButtonAlignRight_Text;
+            this.toggleButtonAlignRight.Text = "";
             // 
             // toggleButtonJustify
             // 
             this.toggleButtonJustify.DisplayName = "Justify";
             this.toggleButtonJustify.Image = global::Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.AlignJustify;
             this.toggleButtonJustify.Name = "toggleButtonJustify";
-            this.toggleButtonJustify.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_toggleButtonJustify_Text;
+            this.toggleButtonJustify.Text = "";
             // 
             // commandBarSeparator2
             // 
@@ -208,14 +208,18 @@
             this.toggleButtonBulletList.DisplayName = "BulletList";
             this.toggleButtonBulletList.Image = global::Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.Bullets;
             this.toggleButtonBulletList.Name = "toggleButtonBulletList";
-            this.toggleButtonBulletList.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_toggleButtonBulletList_Text;
+            this.toggleButtonBulletList.Text = "";
             // 
             // toggleButtonNumberedList
             // 
             this.toggleButtonNumberedList.DisplayName = "NumberedList";
             this.toggleButtonNumberedList.Image = global::Microsoft.SQL.Loc.OTPCaptureViewer.Properties.Resources.Numbering;
             this.toggleButtonNumberedList.Name = "toggleButtonNumberedList";
-            this.toggleButtonNumberedList.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_toggleButtonNumberedList_Text;
+            this.toggleButtonNumberedList.Text = "";
+            // 
+            // commandBarRowElement2
+            // 
+            this.commandBarRowElement2.MinSize = new System.Drawing.Size(25, 25);
             // 
             // NewIssue
             // 
@@ -232,7 +236,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewIssue";
-            this.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_DialogTitle_Text;
+            this.Text = "NewIssue";
             this.Load += new System.EventHandler(this.NewIssue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtDes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleButtonBar)).EndInit();
@@ -263,5 +267,6 @@
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator2;
         private Telerik.WinControls.UI.CommandBarToggleButton toggleButtonBulletList;
         private Telerik.WinControls.UI.CommandBarToggleButton toggleButtonNumberedList;
+        private Telerik.WinControls.UI.CommandBarRowElement commandBarRowElement2;
     }
 }
