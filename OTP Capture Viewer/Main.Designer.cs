@@ -632,6 +632,9 @@
             this.pictureBox_Review.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox_Review.TabIndex = 2;
             this.pictureBox_Review.TabStop = false;
+            this.pictureBox_Review.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Review_MouseDown);
+            this.pictureBox_Review.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Review_MouseMove);
+            this.pictureBox_Review.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Review_MouseUp);
             // 
             // pRef
             // 
@@ -653,6 +656,7 @@
             this.pictureBox_Base.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox_Base.TabIndex = 2;
             this.pictureBox_Base.TabStop = false;
+            this.pictureBox_Base.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Base_MouseMove);
             // 
             // Main
             // 

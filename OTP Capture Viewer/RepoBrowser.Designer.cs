@@ -81,6 +81,7 @@
             // githubTreeView
             // 
             this.githubTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.githubTreeView.HideSelection = false;
             this.githubTreeView.Location = new System.Drawing.Point(0, 0);
             this.githubTreeView.Name = "githubTreeView";
             this.githubTreeView.Size = new System.Drawing.Size(507, 380);

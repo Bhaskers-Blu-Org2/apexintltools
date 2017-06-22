@@ -18,16 +18,57 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         {
             InitializeComponent();
             //githubTreeView.Nodes.Clear();
-            githubTreeView.Nodes.Add(Global.RootNode.Clone() as TreeNode);
+            githubTreeView.Nodes.Add(Global.RootNode);
+            
+        }
+
+        //private void expandNodes(string[] nodes,int index,TreeNode node)
+        //{
+        //    if (index<nodes.Length)
+        //    {
+        //        string text = nodes[index];
+        //        foreach(TreeNode child in node.Nodes)
+        //        {
+        //            if (string.Compare(child.Text,text,true)==0)
+        //            {
+        //                if (index==nodes.Length-1)
+        //                {
+                            
+                            
+        //                }
+        //                else
+        //                {
+        //                    //node.Expand();
+        //                    expandNodes(nodes, index + 1, child);
+        //                }
+        //                break;
+        //            }
+        //        }
+        //    }
+        //}
+
+        public TreeNode SelectedNode
+        {
+            get;set;
         }
 
         private void RepoBrowser_Load(object sender, EventArgs e)
         {
-            if (githubTreeView.Nodes.Count>0)
+
+            if (SelectedNode!=null)
             {
-                foreach (TreeNode tn in githubTreeView.Nodes)
+                githubTreeView.CollapseAll();
+                SelectedNode.TreeView.SelectedNode = SelectedNode;
+                githubTreeView.Select();
+            }
+            else
+            {
+                if (githubTreeView.Nodes.Count > 0)
                 {
-                    tn.Expand();
+                    foreach (TreeNode tn in githubTreeView.Nodes)
+                    {
+                        tn.Expand();
+                    }
                 }
             }
         }
@@ -60,6 +101,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             }
             else
             {
+                SelectedNode = githubTreeView.SelectedNode;
                 GithubTreeItem item = githubTreeView.SelectedNode.Tag as GithubTreeItem;
                 SelectedItem = item;
                 SelectedPath = item.Item.Path;
@@ -121,15 +163,18 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             TreeNode selectedNode = e.Node;
             if (selectedNode.Nodes.Count == 1 && selectedNode.Nodes[0].Text == "Opening...")
             {
-                selectedNode.Nodes.Clear();
+                //selectedNode.Nodes.Clear();
                 GithubTreeItem selectedItem = selectedNode.Tag as GithubTreeItem;
                 if (selectedItem != null)
                 {
                     OTPUtility.SetupSubFolderTreeView(selectedNode, selectedItem);
+                    selectedNode.Nodes.RemoveAt(0);
                     //githubTreeView.Refresh();
-
+                    //Global.RootNode = githubTreeView.Nodes[0].Clone() as TreeNode;
                 }
             }
+            
+            
         }
     }
 }

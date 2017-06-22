@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnDecline = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtEULA = new System.Windows.Forms.RichTextBox();
-            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +48,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(584, 37);
             this.panel1.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(12, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.EulaForm_CloseButton_Text;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Visible = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDecline
             // 
@@ -85,20 +96,10 @@
             this.txtEULA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEULA.Location = new System.Drawing.Point(0, 0);
             this.txtEULA.Name = "txtEULA";
+            this.txtEULA.ReadOnly = true;
             this.txtEULA.Size = new System.Drawing.Size(584, 424);
             this.txtEULA.TabIndex = 0;
-            this.txtEULA.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.EulaForm_EulaText;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(12, 6);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.EulaForm_CloseButton_Text;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Visible = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.txtEULA.Text = "";
             // 
             // EulaForm
             // 
@@ -108,7 +109,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EulaForm";
-            this.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.EulaForm_DialogTitle_Text;
+            this.Text = "End User License Agreement";
             this.Load += new System.EventHandler(this.EndUserLicense_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

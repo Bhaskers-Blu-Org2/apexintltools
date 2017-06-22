@@ -327,34 +327,44 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             resetState();
             ////Remove code for creating temp folder, as temp folder is no need for github version
             ////createTempFolder();
-            
+            using (WaitForm frm = new WaitForm(loadCaptures))
+            {
+                if (frm.ShowDialog()==DialogResult.OK)
+                {
+                    if (locCaptureNames.Count > 0)
+                    {
+                        currentCaptureIndex = 0;
+                        showCapture();
 
+                        setToolButtons(true);
+
+                        setPreNextButtonEnable();
+                    }
+                    else
+                    {
+                        currentCaptureIndex = -1;
+                        MessageBox.Show(global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.Messages.Main_NoCaptureFoundError_Message, Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+
+        }
+
+        private void loadCaptures()
+        {
             Task task1 = Task.Factory.StartNew(() =>
-             {
-                 loadLocCaptures();
-             });
+            {
+                loadLocCaptures();
+            });
 
             Task task2 = Task.Factory.StartNew(() =>
-                 {
-                     loadENUCaptures();
-                 });
+            {
+                loadENUCaptures();
+            });
 
             Task.WaitAll(task1, task2);
 
-            if (locCaptureNames.Count > 0)
-            {
-                currentCaptureIndex = 0;
-                showCapture();
-
-                setToolButtons(true);
-
-                setPreNextButtonEnable();
-            }
-            else
-            {
-                currentCaptureIndex = -1;
-                MessageBox.Show(global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.Messages.Main_NoCaptureFoundError_Message, Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            
         }
 
         private void loadLocCaptures()
@@ -381,6 +391,10 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void loadCaptures(GithubTreeItem item,Dictionary<string,GithubFolderOrFile> captures)
         {
+            if (item.Item.isFolder && item.Children.Count==0)
+            {
+                OTPUtility.createSubTreeItem(item);
+            }
             foreach (GithubTreeItem child in item.Children)
             {
                 if (!child.Item.isFolder)
@@ -388,7 +402,10 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     if (System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".otp" || System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".png" ||
                         System.IO.Path.GetExtension(child.Item.Name).ToLower() == ".jpg")
                     {
-                        captures.Add(child.Item.Name.ToLower(), child.Item);
+                        if (!captures.ContainsKey(child.Item.Name.ToLower()))
+                        {
+                            captures.Add(child.Item.Name.ToLower(), child.Item);
+                        }
                     }
                 }
                 else

@@ -12,7 +12,19 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 {
     public partial class WaitForm : Form
     {
-        public Action<string> Worker { get; set; }
+        public Action<string> WorkerWithParameter { get; set; }
+
+        public Action Worker { get; set; }
+
+        public WaitForm(Action worker)
+        {
+            InitializeComponent();
+            if (worker == null)
+            {
+                throw new ArgumentNullException();
+            }
+            Worker = worker;
+        }
         public WaitForm(Action<string> worker)
         {
             InitializeComponent();
@@ -20,7 +32,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             {
                 throw new ArgumentNullException();
             }
-            Worker = worker;
+            WorkerWithParameter = worker;
         }
 
         public string Parameter { get; set; }
@@ -28,7 +40,14 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            Task.Factory.StartNew(()=> { Worker(Parameter); }).ContinueWith(t => { this.Close(); },TaskScheduler.FromCurrentSynchronizationContext());
+            if (WorkerWithParameter != null)
+            {
+                Task.Factory.StartNew(() => { WorkerWithParameter(Parameter); }).ContinueWith(t => { this.DialogResult = DialogResult.OK; this.Close(); }, TaskScheduler.FromCurrentSynchronizationContext());
+            }
+            if (Worker!=null)
+            {
+                Task.Factory.StartNew(() => { Worker(); }).ContinueWith(t => { this.DialogResult = DialogResult.OK; this.Close();  }, TaskScheduler.FromCurrentSynchronizationContext());
+            }
         }
     }
 }

@@ -16,6 +16,11 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
     {
 
         public string settingFile = string.Empty;
+        RepoBrowser browseDialog;
+
+        public TreeNode selectedLocNode = null;
+        public TreeNode selectedRefNode = null;
+
         public Settings()
         {
             InitializeComponent();
@@ -98,12 +103,13 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         {
             if (Global.RootItem != null && Global.RootNode != null)
             {
-                RepoBrowser dialog = new OTPCaptureViewer.RepoBrowser();
-                if (dialog.ShowDialog() == DialogResult.OK)
+                browseDialog.SelectedNode = selectedLocNode;
+                if (this.browseDialog.ShowDialog() == DialogResult.OK)
                 {
-                    txtLocFolder.Text = dialog.SelectedPath;
-                    Global.LocTreeItem = dialog.SelectedItem;
-                    Global.ReviewCaptureFolderInfo = dialog.FolderInfo;
+                    txtLocFolder.Text = browseDialog.SelectedPath;
+                    Global.LocTreeItem = browseDialog.SelectedItem;
+                    Global.ReviewCaptureFolderInfo = browseDialog.FolderInfo;
+                    selectedLocNode = browseDialog.SelectedNode;
                 }
             }
             else
@@ -117,12 +123,13 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         {
             if (Global.RootItem != null && Global.RootNode != null)
             {
-                RepoBrowser dialog = new OTPCaptureViewer.RepoBrowser();
-                if (dialog.ShowDialog() == DialogResult.OK)
+                browseDialog.SelectedNode = selectedRefNode;
+                if (browseDialog.ShowDialog() == DialogResult.OK)
                 {
-                    txtENUFolder.Text = dialog.SelectedPath;
-                    Global.ENUTreeItem = dialog.SelectedItem;
-                    Global.ReferenceCaptureFolderInfo = dialog.FolderInfo;
+                    txtENUFolder.Text = browseDialog.SelectedPath;
+                    Global.ENUTreeItem = browseDialog.SelectedItem;
+                    Global.ReferenceCaptureFolderInfo = browseDialog.FolderInfo;
+                    selectedRefNode = browseDialog.SelectedNode;
                 }
             }
             else
@@ -153,6 +160,10 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 {
                     frm.Parameter = sessionKey;
                     frm.ShowDialog(this);
+                    if (Global.RootNode!=null)
+                    {
+                        browseDialog = new RepoBrowser();
+                    }
                 }
                 
             }

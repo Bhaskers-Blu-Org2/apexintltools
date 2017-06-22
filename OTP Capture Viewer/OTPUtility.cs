@@ -148,9 +148,9 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             return false;
         }
 
-        static void createSubTreeItem(TreeItem parentTreeItem, GithubTreeItem parent)
+        internal static void createSubTreeItem(GithubTreeItem parent)
         {
-            if (parentTreeItem != null && !string.IsNullOrEmpty(parentTreeItem.Sha))
+            if (parent != null && !string.IsNullOrEmpty(parent.Item.Sha))
             {
                 Task<TreeResponse> treeResponse =
                         Global.GitHubClient.Git.Tree.Get(Global.Owner,Global.Name, parent.Item.Sha);
