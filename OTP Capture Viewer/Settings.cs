@@ -104,6 +104,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             if (Global.RootItem != null && Global.RootNode != null)
             {
                 browseDialog.SelectedNode = selectedLocNode;
+
                 if (this.browseDialog.ShowDialog() == DialogResult.OK)
                 {
                     txtLocFolder.Text = browseDialog.SelectedPath;

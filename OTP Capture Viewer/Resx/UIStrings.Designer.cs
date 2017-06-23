@@ -322,7 +322,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to End User Lisence Agreement.
+        ///   Looks up a localized string similar to End User License Agreement.
         /// </summary>
         internal static string Main_ToolBar_EULA_Text {
             get {
@@ -358,7 +358,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Next[PageDown].
+        ///   Looks up a localized string similar to Next [PageDown].
         /// </summary>
         internal static string Main_ToolBar_Next_Text {
             get {
@@ -691,7 +691,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Github Access Token:.
+        ///   Looks up a localized string similar to GitHub Access Token:.
         /// </summary>
         internal static string Settings_AccessTokenLable_Text {
             get {

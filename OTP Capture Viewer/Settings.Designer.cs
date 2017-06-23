@@ -237,7 +237,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 13);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Github Access Token:";
+            this.label5.Text = "GitHub Access Token:";
             // 
             // Settings
             // 

@@ -199,7 +199,7 @@
     <value>Report an issue</value>
   </data>
   <data name="Main_ToolBar_Next_Text" xml:space="preserve">
-    <value>Next[PageDown]</value>
+    <value>Next [PageDown]</value>
   </data>
   <data name="Main_ToolBar_Previous_Text" xml:space="preserve">
     <value>Previous [PageUp]</value>
@@ -235,7 +235,7 @@
     <value>Cancel</value>
   </data>
   <data name="NewIssue_DialogTitle_Text" xml:space="preserve">
-    <value>NewIssue</value>
+    <value>New Issue</value>
   </data>
   <data name="NewIssue_IssueDescription_LabelText" xml:space="preserve">
     <value>Description:</value>
@@ -295,7 +295,7 @@
     <value>OK</value>
   </data>
   <data name="Settings_AccessTokenLable_Text" xml:space="preserve">
-    <value>Github Access Token:</value>
+    <value>GitHub Access Token:</value>
   </data>
   <data name="Settings_Authentication_GroupName" xml:space="preserve">
     <value>Authentication</value>
@@ -373,7 +373,7 @@
     <value>Close</value>
   </data>
   <data name="Main_ToolBar_EULA_Text" xml:space="preserve">
-    <value>End User Lisence Agreement</value>
+    <value>End User License Agreement</value>
   </data>
   <data name="Main_toolStripButton1_Text" xml:space="preserve">
     <value>toolStripButton1</value>

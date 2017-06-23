@@ -236,7 +236,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewIssue";
-            this.Text = "NewIssue";
+            this.Text = "New Issue";
             this.Load += new System.EventHandler(this.NewIssue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtDes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleButtonBar)).EndInit();

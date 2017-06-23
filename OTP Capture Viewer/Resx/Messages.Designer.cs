@@ -88,7 +88,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t connect to Github!.
+        ///   Looks up a localized string similar to Can&apos;t connect to GitHub!.
         /// </summary>
         internal static string GitHub_ConnectFail_Message {
             get {
@@ -106,7 +106,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Github is not connected!.
+        ///   Looks up a localized string similar to GitHub is not connected!.
         /// </summary>
         internal static string GitHub_NotConnected_Message {
             get {
@@ -142,7 +142,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No captures found under the selected folder. Please check whether you have set the access correctly for the Github token..
+        ///   Looks up a localized string similar to No captures found under the selected folder. Please check whether you have set the access correctly for the GitHub token..
         /// </summary>
         internal static string Main_NoCaptureFoundError_Message {
             get {
@@ -178,7 +178,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Submit failed! The exception is:{0}.
+        ///   Looks up a localized string similar to Submit failed! The exception is: {0}.
         /// </summary>
         internal static string NewIssue_SubmitFailError_Message {
             get {
@@ -187,7 +187,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Submited!.
+        ///   Looks up a localized string similar to Submitted!.
         /// </summary>
         internal static string NewIssue_SubmitSuccess_Message {
             get {

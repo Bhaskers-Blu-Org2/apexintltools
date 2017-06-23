@@ -124,7 +124,7 @@
     <value>Do you want to save the edited picture?</value>
   </data>
   <data name="GitHub_ConnectFail_Message" xml:space="preserve">
-    <value>Can't connect to Github!</value>
+    <value>Can't connect to GitHub!</value>
   </data>
   <data name="GitHub_Connect_Message" xml:space="preserve">
     <value>Connected!</value>
@@ -133,7 +133,7 @@
     <value>Access token is empty!</value>
   </data>
   <data name="GitHub_NotConnected_Message" xml:space="preserve">
-    <value>Github is not connected!</value>
+    <value>GitHub is not connected!</value>
   </data>
   <data name="LoadCapture_LastScreenshot_Message" xml:space="preserve">
     <value>This is the last capture!</value>
@@ -145,7 +145,7 @@
     <value>Can't find the file in the selected folder.</value>
   </data>
   <data name="Main_NoCaptureFoundError_Message" xml:space="preserve">
-    <value>No captures found under the selected folder. Please check whether you have set the access correctly for the Github token.</value>
+    <value>No captures found under the selected folder. Please check whether you have set the access correctly for the GitHub token.</value>
   </data>
   <data name="NewIssue_EmptyDescription_Message" xml:space="preserve">
     <value>Description is empty!</value>
@@ -154,13 +154,13 @@
     <value>Title is empty!</value>
   </data>
   <data name="NewIssue_SubmitFailError_Message" xml:space="preserve">
-    <value>Submit failed! The exception is:{0}</value>
+    <value>Submit failed! The exception is: {0}</value>
   </data>
   <data name="NewIssue_SubmitFail_Message" xml:space="preserve">
     <value>Submit failed!</value>
   </data>
   <data name="NewIssue_SubmitSuccess_Message" xml:space="preserve">
-    <value>Submited!</value>
+    <value>Submitted!</value>
   </data>
   <data name="OpenIssue_MustSelectAnIssue_Message" xml:space="preserve">
     <value>Please select an issue!</value>
@@ -178,7 +178,7 @@
     <value>Save result failed!</value>
   </data>
   <data name="Settings_LogFolderCreateFail_Message" xml:space="preserve">
-    <value>Fail to create the folder!</value>
+    <value>Failure to create the folder!</value>
   </data>
   <data name="Settings_LogFolderNotExist_Message" xml:space="preserve">
     <value>Log folder does not exist. Do you want to create it?</value>
