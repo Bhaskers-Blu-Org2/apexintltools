@@ -60,7 +60,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Title:";
+            this.label1.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_IssueTitle_LabelText;
             // 
             // txtTitle
             // 
@@ -76,7 +76,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Description:";
+            this.label2.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_IssueDescription_LabelText;
             // 
             // txtDes
             // 
@@ -236,7 +236,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewIssue";
-            this.Text = "New Issue";
+            this.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.NewIssue_DialogTitle_Text;
             this.Load += new System.EventHandler(this.NewIssue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtDes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleButtonBar)).EndInit();

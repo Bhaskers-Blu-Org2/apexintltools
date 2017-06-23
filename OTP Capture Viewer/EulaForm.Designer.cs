@@ -99,7 +99,7 @@
             this.txtEULA.ReadOnly = true;
             this.txtEULA.Size = new System.Drawing.Size(584, 424);
             this.txtEULA.TabIndex = 0;
-            this.txtEULA.Text = "";
+            this.txtEULA.Text = string.Empty ;
             // 
             // EulaForm
             // 
@@ -109,7 +109,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EulaForm";
-            this.Text = "End User License Agreement";
+            this.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.EulaForm_DialogTitle_Text;
             this.Load += new System.EventHandler(this.EndUserLicense_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

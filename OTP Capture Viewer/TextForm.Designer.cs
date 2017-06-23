@@ -73,7 +73,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "TextForm";
-            this.Text = "Input Text";
+            this.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.TextForm_DialogTitle_Text;
             this.ResumeLayout(false);
             this.PerformLayout();
 

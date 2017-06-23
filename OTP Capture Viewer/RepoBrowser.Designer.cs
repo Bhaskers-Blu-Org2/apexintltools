@@ -97,7 +97,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "RepoBrowser";
-            this.Text = "Browse folder";
+            this.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.RepoBrowser_DialogTitle_Text;               
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RepoBrowser_FormClosing);
             this.Load += new System.EventHandler(this.RepoBrowser_Load);
             this.panel1.ResumeLayout(false);
