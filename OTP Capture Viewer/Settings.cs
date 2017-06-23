@@ -168,7 +168,9 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                         browseDialog = new RepoBrowser();
                     }
                 }
-                
+                CaptureSetting.IsReadyForReview = false;
+                txtENUFolder.Text = "";
+                txtLocFolder.Text = "";
             }
         }
 

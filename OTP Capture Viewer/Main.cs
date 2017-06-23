@@ -226,7 +226,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     }
                     updateResult();
                     showIssues(fileName);
-                    currentTotalLabel.Text = (currentCaptureIndex + 1).ToString() + "/" + enuCaptures.Count.ToString();
+                    currentTotalLabel.Text = (currentCaptureIndex + 1).ToString() + "/" + this.locCaptureNames.Count.ToString();
                 }
             }
             else
