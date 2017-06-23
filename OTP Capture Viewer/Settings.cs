@@ -38,6 +38,8 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 CaptureSetting.LogFolder = txtLogFolder.Text.Trim();
                 CaptureSetting.ENUCaptureFolder = txtENUFolder.Text.Trim();
                 CaptureSetting.LocCaptureFolder = txtLocFolder.Text.Trim();
+                Global.SelectedLocNode = selectedLocNode;
+                Global.SelectedRefNode = selectedRefNode;
                 OTPUtility.GetFolderInfo();
                 CaptureSetting.IsReadyForReview = true;
                 if (chkSaveSxS.Checked)
@@ -175,6 +177,13 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             this.txtLocFolder.Text = CaptureSetting.LocCaptureFolder;
             this.txtENUFolder.Text = CaptureSetting.ENUCaptureFolder;
             this.txtLogFolder.Text = CaptureSetting.LogFolder;
+
+            if (Global.RootItem!=null)
+            {
+                browseDialog = new RepoBrowser();
+                selectedLocNode = Global.SelectedLocNode;
+                selectedRefNode = Global.SelectedRefNode;
+            }
         }
 
         private void chkShowToken_CheckedChanged(object sender, EventArgs e)

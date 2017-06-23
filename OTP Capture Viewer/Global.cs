@@ -30,6 +30,16 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
        
         //internal static string ReviewFolderPath = @"\Review";
         static string token = "";
+
+        internal static TreeNode SelectedLocNode
+        {
+            get;set;
+        }
+
+        internal static TreeNode SelectedRefNode
+        {
+            get;set;
+        }
         internal static string GithubToken
         {
             get

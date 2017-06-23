@@ -18,7 +18,8 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         {
             InitializeComponent();
             //githubTreeView.Nodes.Clear();
-            githubTreeView.Nodes.Add(Global.RootNode);
+            
+            
             
         }
 
@@ -54,7 +55,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void RepoBrowser_Load(object sender, EventArgs e)
         {
-
+            githubTreeView.Nodes.Add(Global.RootNode);
             if (SelectedNode!=null)
             {
                 githubTreeView.CollapseAll();
@@ -175,6 +176,11 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             }
             
             
+        }
+
+        private void RepoBrowser_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            githubTreeView.Nodes.Remove(Global.RootNode);
         }
     }
 }

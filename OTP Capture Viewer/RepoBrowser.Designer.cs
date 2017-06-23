@@ -98,6 +98,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "RepoBrowser";
             this.Text = "Browse folder";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RepoBrowser_FormClosing);
             this.Load += new System.EventHandler(this.RepoBrowser_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

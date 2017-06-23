@@ -193,82 +193,17 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     string key = locCaptureNames[currentCaptureIndex];
                     GithubFolderOrFile item = locCaptures[key];
                     string fileName = System.IO.Path.GetFileName(item.Name);
+
+                    downloadLocCapture(item, key);
+                    downloadEnuCapture(key);
                     //Task locTask = Task.Factory.StartNew(() =>
                     //  {                        
-                          this.Text = Global.ProductName + "  -  " + item.Path;
-                          Task<Blob> blobTask = Global.GitHubClient.Git.Blob.Get(Global.RepoId, item.Sha);
-                          blobTask.Wait();
-                          Blob blob = blobTask.Result;
-                          if (blob != null)
-                          {
-                              using (Stream ms = new MemoryStream(Convert.FromBase64String(blob.Content)))
-                              {
-                                  if (key.ToLower().EndsWith(".otp"))
-                                  {
-                                      locSS = new UIScreenshot(ms);
-                                      if (locSS != null)
-                                      {
-                                          pictureBox_Review.Image = locSS.UIImage;
-                                          reviewImage = locSS.UIImage;
-                                          originHeight = reviewImage.Height;
-                                          originWidth = reviewImage.Width;
-                                          setZoonEnable(true);
-
-                                      }
-                                  }
-                                  else
-                                  {
-                                      Image image = new Bitmap(ms);
-                                      pictureBox_Review.Image = image;
-                                      reviewImage = image;
-                                      originHeight = reviewImage.Height;
-                                      originWidth = reviewImage.Width;
-                                      setZoonEnable(true);
-                                  }
-
-                              }
-
-
-                          }
+                         
                      // }, System.Threading.CancellationToken.None, TaskCreationOptions.None, TaskScheduler.FromCurrentSynchronizationContext());
 
                     //Task enuTask = Task.Factory.StartNew(() =>
                     //  {
-                          if (enuCaptures.Keys.Contains(key))
-                          {
-                              GithubFolderOrFile enuItem = enuCaptures[key];
-                              Task<Blob> enuBlobTask = Global.GitHubClient.Git.Blob.Get(Global.RepoId, enuItem.Sha);
-                              enuBlobTask.Wait();
-                              Blob enuBlob = enuBlobTask.Result;
-                              {
-                                  using (Stream ms = new MemoryStream(Convert.FromBase64String(enuBlob.Content)))
-                                  {
-                                      if (key.ToLower().EndsWith(".otp"))
-                                      {
-                                          enuSS = new UIScreenshot(ms);
-                                          if (enuSS != null)
-                                          {
-                                              pictureBox_Base.Image = enuSS.UIImage;
-                                              baseImage = enuSS.UIImage;
-
-                                          }
-                                      }
-                                      else
-                                      {
-                                          Image image = new Bitmap(ms);
-                                          pictureBox_Base.Image = image;
-                                          baseImage = image;
-                                      }
-                                  }
-
-
-                              }
-                          }
-                          else
-                          {
-                              pictureBox_Base.Image = Properties.Resources.NotFound;
-                              baseImage = Properties.Resources.NotFound;
-                          }
+                          
                       //},System.Threading.CancellationToken.None, TaskCreationOptions.None,TaskScheduler.FromCurrentSynchronizationContext());
 
                     //Task.WaitAll(locTask, enuTask);
@@ -300,6 +235,88 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             }           
         }
 
+        private void downloadLocCapture(GithubFolderOrFile item,string key)
+        {
+            
+                this.Text = Global.ProductName + "  -  " + item.Path;
+                Task<Blob> blobTask = Global.GitHubClient.Git.Blob.Get(Global.RepoId, item.Sha);
+                blobTask.Wait();
+                Blob blob = blobTask.Result;
+                if (blob != null)
+                {
+                    using (Stream ms = new MemoryStream(Convert.FromBase64String(blob.Content)))
+                    {
+                        if (key.ToLower().EndsWith(".otp"))
+                        {
+                            locSS = new UIScreenshot(ms);
+                            if (locSS != null)
+                            {
+                                pictureBox_Review.Image = locSS.UIImage;
+                                reviewImage = locSS.UIImage;
+                                originHeight = reviewImage.Height;
+                                originWidth = reviewImage.Width;
+                                setZoonEnable(true);
+
+                            }
+                        }
+                        else
+                        {
+                            Image image = new Bitmap(ms);
+                            pictureBox_Review.Image = image;
+                            reviewImage = image;
+                            originHeight = reviewImage.Height;
+                            originWidth = reviewImage.Width;
+                            setZoonEnable(true);
+                        }
+
+                    }
+
+
+                }
+            
+        }
+
+        private void downloadEnuCapture(string key)
+        {
+            
+                if (enuCaptures.Keys.Contains(key))
+                {
+                    GithubFolderOrFile enuItem = enuCaptures[key];
+                    Task<Blob> enuBlobTask = Global.GitHubClient.Git.Blob.Get(Global.RepoId, enuItem.Sha);
+                    enuBlobTask.Wait();
+                    Blob enuBlob = enuBlobTask.Result;
+                    {
+                        using (Stream ms = new MemoryStream(Convert.FromBase64String(enuBlob.Content)))
+                        {
+                            if (key.ToLower().EndsWith(".otp"))
+                            {
+                                enuSS = new UIScreenshot(ms);
+                                if (enuSS != null)
+                                {
+                                    pictureBox_Base.Image = enuSS.UIImage;
+                                    baseImage = enuSS.UIImage;
+
+                                }
+                            }
+                            else
+                            {
+                                Image image = new Bitmap(ms);
+                                pictureBox_Base.Image = image;
+                                baseImage = image;
+                            }
+                        }
+
+
+                    }
+                }
+                else
+                {
+                    pictureBox_Base.Image = Properties.Resources.NotFound;
+                    baseImage = Properties.Resources.NotFound;
+                }
+           
+        }
+
         private void showIssues(string fileName)
         {
             if (Global.RepoIssues!=null)
@@ -324,6 +341,16 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            //var apiInfo = Global.GitHubClient.GetLastApiInfo();
+
+            //// If the ApiInfo isn't null, there will be a property called RateLimit
+            //var rateLimit = apiInfo?.RateLimit;
+
+            //var howManyRequestsCanIMakePerHour = rateLimit?.Limit;
+            //var howManyRequestsDoIHaveLeft = rateLimit?.Remaining;
+            //var whenDoesTheLimitReset = rateLimit?.Reset;
+
+
             resetState();
             ////Remove code for creating temp folder, as temp folder is no need for github version
             ////createTempFolder();
