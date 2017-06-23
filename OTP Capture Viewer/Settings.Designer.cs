@@ -89,7 +89,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             this.groupBox1.Size = new System.Drawing.Size(598, 123);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Capture Info";
+            this.groupBox1.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Settings_CaptureInfo_GroupName;
             // 
             // chkSaveSxS
             // 
@@ -128,7 +128,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Log Folder:";
+            this.label3.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Settings_LogFolderLabel_Text;
             // 
             // btnBrowseENU
             // 
@@ -157,7 +157,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 13);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Reference Capture Folder:";
+            this.label2.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Settings_CaptureInfo_ReferenceFolderLabel_Text;
             // 
             // btnBrowseLoc
             // 
@@ -186,7 +186,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 13);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Review Capture Folder:";
+            this.label1.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Settings_CaptureInfo_ReviewFolderLabel_Text;
             // 
             // groupBox2
             // 
@@ -199,7 +199,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             this.groupBox2.Size = new System.Drawing.Size(598, 70);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Authentication";
+            this.groupBox2.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Settings_Authentication_GroupName;
             // 
             // chkShowToken
             // 
@@ -237,7 +237,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 13);
             this.label5.TabIndex = 0;
-            this.label5.Text = "GitHub Access Token:";
+            this.label5.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Settings_AccessTokenLable_Text;
             // 
             // Settings
             // 
@@ -251,7 +251,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Settings";
-            this.Text = "Settings";
+            this.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Settings_DialogTitle;
             this.Load += new System.EventHandler(this.Settings_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

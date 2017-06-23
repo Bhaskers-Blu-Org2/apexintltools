@@ -178,7 +178,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fail.
+        ///   Looks up a localized string similar to Fail.
         /// </summary>
         internal static string Main_CaptureResult_Fail_LabelText {
             get {
@@ -196,7 +196,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to pass.
+        ///   Looks up a localized string similar to Pass.
         /// </summary>
         internal static string Main_CaptureResult_Pass_LabelText {
             get {
@@ -466,7 +466,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to toolStripButton1.
+        ///   Looks up a localized string similar to Look Up Capture.
         /// </summary>
         internal static string Main_toolStripButton1_Text {
             get {
@@ -475,7 +475,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to toolStripDropDownButton1.
+        ///   Looks up a localized string similar to About.
         /// </summary>
         internal static string Main_toolStripDropDownButton1_Text {
             get {
@@ -493,7 +493,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NewIssue.
+        ///   Looks up a localized string similar to New Issue.
         /// </summary>
         internal static string NewIssue_DialogTitle_Text {
             get {
@@ -678,6 +678,15 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer.Resx {
         internal static string RepoBrowser_OKButton_Text {
             get {
                 return ResourceManager.GetString("RepoBrowser_OKButton_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opening....
+        /// </summary>
+        internal static string RepoBrowser_Opening_LblText {
+            get {
+                return ResourceManager.GetString("RepoBrowser_Opening_LblText", resourceCulture);
             }
         }
         

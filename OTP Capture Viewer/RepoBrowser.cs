@@ -162,7 +162,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         private void githubTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             TreeNode selectedNode = e.Node;
-            if (selectedNode.Nodes.Count == 1 && selectedNode.Nodes[0].Text == "Opening...")
+            if (selectedNode.Nodes.Count == 1 && string.Compare(selectedNode.Nodes[0].Text, global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.RepoBrowser_Opening_LblText, true) ==0)
             {
                 //selectedNode.Nodes.Clear();
                 GithubTreeItem selectedItem = selectedNode.Tag as GithubTreeItem;

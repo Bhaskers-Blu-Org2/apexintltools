@@ -79,7 +79,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             setToolButtons(false);
             btnStart.Enabled = false;
             btnSetting.Enabled = true;
-            this.Text = Global.ProductName;            
+            this.Text = Global.ProductName;
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     Directory.CreateDirectory(userFolder);
                 }
                 resultFile = userFolder + "\\" + "Result.XML";
-                csvResultFile = userFolder + "\\"+ "Result.csv";
+                csvResultFile = userFolder + "\\" + "Result.csv";
                 if (File.Exists(resultFile))
                 {
                     resultDoc = new XmlDocument();
@@ -169,7 +169,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             { }
         }
 
-        
+
 
         private void showCapture()
         {
@@ -186,9 +186,9 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             originHeight = 0;
             originWidth = 0;
 
-            if (locCaptures.Keys.Count>0)
+            if (locCaptures.Keys.Count > 0)
             {
-                if (currentCaptureIndex < locCaptures.Keys.Count && currentCaptureIndex<locCaptureNames.Count)
+                if (currentCaptureIndex < locCaptures.Keys.Count && currentCaptureIndex < locCaptureNames.Count)
                 {
                     string key = locCaptureNames[currentCaptureIndex];
                     GithubFolderOrFile item = locCaptures[key];
@@ -198,13 +198,13 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     downloadEnuCapture(key);
                     //Task locTask = Task.Factory.StartNew(() =>
                     //  {                        
-                         
-                     // }, System.Threading.CancellationToken.None, TaskCreationOptions.None, TaskScheduler.FromCurrentSynchronizationContext());
+
+                    // }, System.Threading.CancellationToken.None, TaskCreationOptions.None, TaskScheduler.FromCurrentSynchronizationContext());
 
                     //Task enuTask = Task.Factory.StartNew(() =>
                     //  {
-                          
-                      //},System.Threading.CancellationToken.None, TaskCreationOptions.None,TaskScheduler.FromCurrentSynchronizationContext());
+
+                    //},System.Threading.CancellationToken.None, TaskCreationOptions.None,TaskScheduler.FromCurrentSynchronizationContext());
 
                     //Task.WaitAll(locTask, enuTask);
 
@@ -232,101 +232,101 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             else
             {
                 MessageBox.Show(global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.Messages.LoadCapture_NoScreenshotFound_Message, Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }           
+            }
         }
 
-        private void downloadLocCapture(GithubFolderOrFile item,string key)
+        private void downloadLocCapture(GithubFolderOrFile item, string key)
         {
-            
-                this.Text = Global.ProductName + "  -  " + item.Path;
-                Task<Blob> blobTask = Global.GitHubClient.Git.Blob.Get(Global.RepoId, item.Sha);
-                blobTask.Wait();
-                Blob blob = blobTask.Result;
-                if (blob != null)
+
+            this.Text = Global.ProductName + "  -  " + item.Path;
+            Task<Blob> blobTask = Global.GitHubClient.Git.Blob.Get(Global.RepoId, item.Sha);
+            blobTask.Wait();
+            Blob blob = blobTask.Result;
+            if (blob != null)
+            {
+                using (Stream ms = new MemoryStream(Convert.FromBase64String(blob.Content)))
                 {
-                    using (Stream ms = new MemoryStream(Convert.FromBase64String(blob.Content)))
+                    if (key.ToLower().EndsWith(".otp"))
+                    {
+                        locSS = new UIScreenshot(ms);
+                        if (locSS != null)
+                        {
+                            pictureBox_Review.Image = locSS.UIImage;
+                            reviewImage = locSS.UIImage;
+                            originHeight = reviewImage.Height;
+                            originWidth = reviewImage.Width;
+                            setZoonEnable(true);
+
+                        }
+                    }
+                    else
+                    {
+                        Image image = new Bitmap(ms);
+                        pictureBox_Review.Image = image;
+                        reviewImage = image;
+                        originHeight = reviewImage.Height;
+                        originWidth = reviewImage.Width;
+                        setZoonEnable(true);
+                    }
+
+                }
+
+
+            }
+
+        }
+
+        private void downloadEnuCapture(string key)
+        {
+
+            if (enuCaptures.Keys.Contains(key))
+            {
+                GithubFolderOrFile enuItem = enuCaptures[key];
+                Task<Blob> enuBlobTask = Global.GitHubClient.Git.Blob.Get(Global.RepoId, enuItem.Sha);
+                enuBlobTask.Wait();
+                Blob enuBlob = enuBlobTask.Result;
+                {
+                    using (Stream ms = new MemoryStream(Convert.FromBase64String(enuBlob.Content)))
                     {
                         if (key.ToLower().EndsWith(".otp"))
                         {
-                            locSS = new UIScreenshot(ms);
-                            if (locSS != null)
+                            enuSS = new UIScreenshot(ms);
+                            if (enuSS != null)
                             {
-                                pictureBox_Review.Image = locSS.UIImage;
-                                reviewImage = locSS.UIImage;
-                                originHeight = reviewImage.Height;
-                                originWidth = reviewImage.Width;
-                                setZoonEnable(true);
+                                pictureBox_Base.Image = enuSS.UIImage;
+                                baseImage = enuSS.UIImage;
 
                             }
                         }
                         else
                         {
                             Image image = new Bitmap(ms);
-                            pictureBox_Review.Image = image;
-                            reviewImage = image;
-                            originHeight = reviewImage.Height;
-                            originWidth = reviewImage.Width;
-                            setZoonEnable(true);
+                            pictureBox_Base.Image = image;
+                            baseImage = image;
                         }
-
                     }
 
 
                 }
-            
-        }
+            }
+            else
+            {
+                pictureBox_Base.Image = Properties.Resources.NotFound;
+                baseImage = Properties.Resources.NotFound;
+            }
 
-        private void downloadEnuCapture(string key)
-        {
-            
-                if (enuCaptures.Keys.Contains(key))
-                {
-                    GithubFolderOrFile enuItem = enuCaptures[key];
-                    Task<Blob> enuBlobTask = Global.GitHubClient.Git.Blob.Get(Global.RepoId, enuItem.Sha);
-                    enuBlobTask.Wait();
-                    Blob enuBlob = enuBlobTask.Result;
-                    {
-                        using (Stream ms = new MemoryStream(Convert.FromBase64String(enuBlob.Content)))
-                        {
-                            if (key.ToLower().EndsWith(".otp"))
-                            {
-                                enuSS = new UIScreenshot(ms);
-                                if (enuSS != null)
-                                {
-                                    pictureBox_Base.Image = enuSS.UIImage;
-                                    baseImage = enuSS.UIImage;
-
-                                }
-                            }
-                            else
-                            {
-                                Image image = new Bitmap(ms);
-                                pictureBox_Base.Image = image;
-                                baseImage = image;
-                            }
-                        }
-
-
-                    }
-                }
-                else
-                {
-                    pictureBox_Base.Image = Properties.Resources.NotFound;
-                    baseImage = Properties.Resources.NotFound;
-                }
-           
         }
 
         private void showIssues(string fileName)
         {
-            if (Global.RepoIssues!=null)
+            if (Global.RepoIssues != null)
             {
                 var q = from i in Global.RepoIssues
                         where i.Title.Contains("[" + fileName.ToLower() + "]")
                         select i;
                 List<Issue> issues = q.ToList<Issue>();
                 lvIssues.Items.Clear();
-                foreach(Issue issue in issues)
+                foreach (Issue issue in issues)
                 {
                     ListViewItem lvi = new ListViewItem(issue.Id.ToString());
                     lvi.SubItems.Add(issue.Number.ToString());
@@ -356,7 +356,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             ////createTempFolder();
             using (WaitForm frm = new WaitForm(loadCaptures))
             {
-                if (frm.ShowDialog()==DialogResult.OK)
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
                     if (locCaptureNames.Count > 0)
                     {
@@ -391,7 +391,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
             Task.WaitAll(task1, task2);
 
-            
+
         }
 
         private void loadLocCaptures()
@@ -416,9 +416,9 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             }
         }
 
-        private void loadCaptures(GithubTreeItem item,Dictionary<string,GithubFolderOrFile> captures)
+        private void loadCaptures(GithubTreeItem item, Dictionary<string, GithubFolderOrFile> captures)
         {
-            if (item.Item.isFolder && item.Children.Count==0)
+            if (item.Item.isFolder && item.Children.Count == 0)
             {
                 OTPUtility.createSubTreeItem(item);
             }
@@ -437,7 +437,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 }
                 else
                 {
-                    loadCaptures(child,captures);
+                    loadCaptures(child, captures);
                 }
             }
         }
@@ -696,7 +696,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             resetButton();
         }
 
-       
+
 
         public static Cursor CreateCursor(Bitmap bmp, int xHotSpot, int yHotSpot)
         {
@@ -717,7 +717,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             picturebox.Image = graphicImage;
             picturebox.Width = graphicImage.Width;
             picturebox.Height = graphicImage.Height;
-        } 
+        }
 
         private void btnScaleOut_Click(object sender, EventArgs e)
         {
@@ -829,9 +829,9 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             {
                 LocUIElement element = locSS.UIElement;
                 currentLocElement = element.FindChildFromPoint(new Point(e.X, e.Y));
-                if (currentLocElement!=null)
+                if (currentLocElement != null)
                 {
-                    
+
 
                 }
 
@@ -891,7 +891,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 string fileName = locCaptureNames[currentCaptureIndex];
                 //string language = Global.ReviewCaptureFolderInfo.LanguageId.ToString();
                 string language = Global.ReviewCaptureFolderInfo.LanguageName.ToString();
-               
+
                 XmlElement existedNode = (XmlElement)root.SelectSingleNode("./Capture[@FileName='" + fileName + "' and @Language='" + language + "']");
 
                 if (existedNode != null)
@@ -924,19 +924,21 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         {
             string fileName = locCaptureNames[currentCaptureIndex];
             string language = Global.ReviewCaptureFolderInfo.LanguageName.ToString();
-            
-            
+
+
 
             XmlElement existedNode = (XmlElement)root.SelectSingleNode("./Capture[@FileName='" + fileName + "' and @Language='" + language + "']");
 
             if (existedNode != null)
             {
                 lblResult.Text = existedNode.Attributes["Result"].Value;
-                if(lblResult.Text.ToLower() == global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Pass_LabelText)
+                //if(lblResult.Text.ToLower() == global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Pass_LabelText)
+                if (string.Compare(lblResult.Text, global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Pass_LabelText, true) == 0)
                 {
                     lblResult.ForeColor = Color.Green;
                 }
-                else if (lblResult.Text.ToLower() == global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Fail_LabelText)
+                //else if (lblResult.Text.ToLower() == global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Fail_LabelText)
+                else if(string.Compare(lblResult.Text, global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Fail_LabelText, true)==0)
                 {
                     lblResult.ForeColor = Color.Red;
                 }
@@ -986,7 +988,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     catch
                     {
                         MessageBox.Show(global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.Messages.ReviewCapture_SaveResultFail_Message, Global.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        
+
                     }
                     finally
                     {
@@ -1025,7 +1027,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnBug_Click(object sender, EventArgs e)
@@ -1058,7 +1060,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 }
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    if (Global.SaveReferenceCaptureSxS && pictureBox_Base.Image!=null)
+                    if (Global.SaveReferenceCaptureSxS && pictureBox_Base.Image != null)
                     {
                         Image combinedImage = ImageUtility.CombineImages(new Image[] { pictureBox_Review.Image, pictureBox_Base.Image });
                         combinedImage.Save(dialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
@@ -1149,7 +1151,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void linkToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (lvIssues.SelectedItems != null && lvIssues.SelectedItems.Count > 0 
+            if (lvIssues.SelectedItems != null && lvIssues.SelectedItems.Count > 0
                 && lvIssues.SelectedItems[0].SubItems != null && lvIssues.SelectedItems[0].SubItems.Count > 0)
             {
                 string number = lvIssues.SelectedItems[0].SubItems[1].Text;
@@ -1177,7 +1179,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             string fileName = System.IO.Path.GetFileName(item.Name).ToLower();
             dialog.CaptureFileName = fileName;
 
-            if (dialog.ShowDialog()==DialogResult.OK)
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
                 showIssues(fileName);
             }
@@ -1190,12 +1192,12 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
         }
 
-        
 
-       
+
+
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -1224,7 +1226,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         //                CaptureSetting.ENUCaptureFolder = node.SelectSingleNode("ENUFolder").InnerText;
         //                CaptureSetting.LogFolder = node.SelectSingleNode("LogFolder").InnerText;
         //                CaptureSetting.IsReadyForReview = bool.Parse(node.SelectSingleNode("IsReadyForReview").InnerText);
-                        
+
         //            }
         //        }
         //        catch (Exception ex)
@@ -1330,7 +1332,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             using (LookupCapture frm = new LookupCapture())
             {
                 frm.LocCaptureNames = locCaptureNames;
-                if (frm.ShowDialog()==DialogResult.OK)
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
                     string fileName = frm.SelectedName;
                     currentCaptureIndex = locCaptureNames.IndexOf(fileName);

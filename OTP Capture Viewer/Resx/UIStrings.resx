@@ -142,13 +142,13 @@
     <value />
   </data>
   <data name="Main_CaptureResult_Fail_LabelText" xml:space="preserve">
-    <value>fail</value>
+    <value>Fail</value>
   </data>
   <data name="Main_CaptureResult_NotReviewed_LabelText" xml:space="preserve">
     <value>Not Reviewed</value>
   </data>
   <data name="Main_CaptureResult_Pass_LabelText" xml:space="preserve">
-    <value>pass</value>
+    <value>Pass</value>
   </data>
   <data name="Main_ContextMenu_Copy_Text" xml:space="preserve">
     <value>Copy</value>
@@ -376,9 +376,12 @@
     <value>End User License Agreement</value>
   </data>
   <data name="Main_toolStripButton1_Text" xml:space="preserve">
-    <value>toolStripButton1</value>
+    <value>Look Up Capture</value>
   </data>
   <data name="Main_toolStripDropDownButton1_Text" xml:space="preserve">
-    <value>toolStripDropDownButton1</value>
+    <value>About</value>
+  </data>
+  <data name="RepoBrowser_Opening_LblText" xml:space="preserve">
+    <value>Opening...</value>
   </data>
 </root>

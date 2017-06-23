@@ -256,7 +256,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     {
                         TreeNode node = new TreeNode(child.Item.Name);
                         node.Tag = child;
-                        node.Nodes.Add(new TreeNode("Opening..."));
+                        node.Nodes.Add(new TreeNode(global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.RepoBrowser_Opening_LblText));
                         parent.Nodes.Add(node);
                     }
                 }

@@ -136,7 +136,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1264, 25);
             this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_ToolStrip1_Text;
             // 
             // btnSetting
             // 
@@ -403,7 +403,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Review Capture:";
+            this.label1.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_PictureBox_ReviewCapture_Text;
             // 
             // contextMenuStrip1
             // 
@@ -438,7 +438,7 @@
             this.label2.Size = new System.Drawing.Size(136, 18);
             this.label2.TabIndex = 1;
             this.label2.Tag = ",";
-            this.label2.Text = "Reference Capture:";
+            this.label2.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_PictureBox_ReferenceCapture_Text;
             // 
             // pButton
             // 
@@ -524,7 +524,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Issues:";
+            this.label4.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_IssueList_Issues_LabelText;
             // 
             // pLeft
             // 
@@ -548,7 +548,7 @@
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(133, 22);
             this.statusStrip1.TabIndex = 10;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CurrentTotal_LabelText;
             // 
             // currentTotalLabel
             // 
@@ -585,7 +585,7 @@
             this.lb_Wrong.Name = "lb_Wrong";
             this.lb_Wrong.Size = new System.Drawing.Size(26, 18);
             this.lb_Wrong.TabIndex = 7;
-            this.lb_Wrong.Text = "fail";
+            this.lb_Wrong.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Fail_LabelText;
             // 
             // lb_Good
             // 
@@ -595,7 +595,7 @@
             this.lb_Good.Name = "lb_Good";
             this.lb_Good.Size = new System.Drawing.Size(40, 18);
             this.lb_Good.TabIndex = 5;
-            this.lb_Good.Text = "pass";
+            this.lb_Good.Text = global::Microsoft.SQL.Loc.OTPCaptureViewer.Resx.UIStrings.Main_CaptureResult_Pass_LabelText;
             // 
             // exactToolStripMenuItem
             // 
