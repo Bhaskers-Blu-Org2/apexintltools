@@ -72,7 +72,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 gitHubClient = new GitHubClient(new ProductHeaderValue(HeaderName), urlStr);
                 gitHubClient.Credentials = basicAuth;
                 MD5CryptoServiceProvider md5Hasher = new MD5CryptoServiceProvider();
-                byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(token));
+                byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(GithubToken));
                 StringBuilder sBuilder = new StringBuilder();
                 for (int i = 0; i < data.Length; i++)
                 {
