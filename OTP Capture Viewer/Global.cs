@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Microsoft.SQL.Loc.OTPCaptureViewer
 {
@@ -27,9 +29,21 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         internal static CaptureFolderInfo ReviewCaptureFolderInfo = null;
         internal static CaptureFolderInfo ReferenceCaptureFolderInfo = null;
         internal static bool SaveReferenceCaptureSxS = true;
-       
+        internal static string progressFilePath = "progress.xml";
         //internal static string ReviewFolderPath = @"\Review";
         static string token = "";
+
+        internal static XmlDocument progressDoc;
+        internal static XmlElement progressRoot;
+        internal static XmlElement currentProgressNode;
+        internal static string tokenHash;
+        static internal string TokenHash
+        {
+            get
+            {
+                return tokenHash;
+            }
+        }
 
         internal static TreeNode SelectedLocNode
         {
@@ -57,6 +71,14 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 Credentials basicAuth = new Credentials(GithubToken);
                 gitHubClient = new GitHubClient(new ProductHeaderValue(HeaderName), urlStr);
                 gitHubClient.Credentials = basicAuth;
+                MD5CryptoServiceProvider md5Hasher = new MD5CryptoServiceProvider();
+                byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(token));
+                StringBuilder sBuilder = new StringBuilder();
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sBuilder.Append(data[i].ToString("x2"));
+                }
+                tokenHash= sBuilder.ToString();
             }
         }
 

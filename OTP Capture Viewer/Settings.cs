@@ -40,8 +40,10 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                 CaptureSetting.LocCaptureFolder = txtLocFolder.Text.Trim();
                 Global.SelectedLocNode = selectedLocNode;
                 Global.SelectedRefNode = selectedRefNode;
+                Global.progressFilePath = CaptureSetting.LogFolder + "\\progress.xml";
                 OTPUtility.GetFolderInfo();
                 CaptureSetting.IsReadyForReview = true;
+                getProgressNode(CaptureSetting.LocCaptureFolder);
                 if (chkSaveSxS.Checked)
                 {
                     Global.SaveReferenceCaptureSxS = true;
@@ -51,6 +53,41 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     Global.SaveReferenceCaptureSxS = false;
                 }
                 this.DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void getProgressNode(string locPath)
+        {
+            if (Global.progressDoc == null)
+            {
+                if (File.Exists(Global.progressFilePath))
+                {
+                    Global.progressDoc = new XmlDocument();
+                    Global.progressDoc.Load(Global.progressFilePath);
+                    Global.progressRoot = (XmlElement)Global.progressDoc.FirstChild;
+                }
+                else
+                {
+                    Global.progressDoc = new XmlDocument();
+                    Global.progressDoc.LoadXml("<Review></Review>");
+                    Global.progressRoot = (XmlElement)Global.progressDoc.FirstChild;
+                    Global.progressDoc.Save(Global.progressFilePath);
+                }
+            }
+
+            XmlElement existedNode = (XmlElement)Global.progressRoot.SelectSingleNode("./Progress[@LocPath='" + locPath + "' and @UserHash='" + Global.TokenHash + "']");
+
+            if (existedNode != null)
+            {
+                Global.currentProgressNode = existedNode;
+            }
+            else
+            {
+                Global.currentProgressNode = Global.progressDoc.CreateElement("Progress");
+                Global.currentProgressNode.SetAttribute("LocPath", locPath);
+                Global.currentProgressNode.SetAttribute("UserHash", Global.TokenHash);
+                Global.currentProgressNode.SetAttribute("LastCaptureName", "");
+                Global.progressRoot.AppendChild(Global.currentProgressNode);
             }
         }
 

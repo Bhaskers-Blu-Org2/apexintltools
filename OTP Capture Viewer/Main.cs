@@ -84,6 +84,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
+            saveProgress();
             Settings dialog = new Settings();
             dialog.settingFile = currentFolder + @"\" + captureSettingsFileName;
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -111,6 +112,9 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     resultDoc.Save(resultFile);
                 }
 
+                
+                
+
                 setToolButtons(false);
             }
 
@@ -121,6 +125,16 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
             else
             {
                 btnStart.Enabled = false;
+            }
+        }
+
+        private void saveProgress()
+        {
+            if (Global.currentProgressNode != null && currentCaptureIndex >= 0)
+            {
+                string lastFileName = Path.GetFileName(locCaptureNames[currentCaptureIndex]);
+                Global.currentProgressNode.Attributes["LastCaptureName"].Value = lastFileName;
+                Global.progressDoc.Save(Global.progressFilePath);
             }
         }
 
@@ -361,6 +375,20 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
                     if (locCaptureNames.Count > 0)
                     {
                         currentCaptureIndex = 0;
+                        if (Global.currentProgressNode!=null)
+                        {
+                            string lastFileName = Global.currentProgressNode.Attributes["LastCaptureName"].Value;
+                            int idx = locCaptureNames.IndexOf(lastFileName.ToLower());
+                            if (idx>=0)
+                            {
+                                if (MessageBox.Show("Do you want to continue the previous progress?",Global.ProductName,MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                                {
+                                    currentCaptureIndex = idx;
+                                }
+                            }
+                        }
+
+                       
                         showCapture();
 
                         setToolButtons(true);
@@ -1192,7 +1220,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            saveProgress();
         }
 
 
