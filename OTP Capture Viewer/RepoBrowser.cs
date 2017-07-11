@@ -56,7 +56,7 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
         private void RepoBrowser_Load(object sender, EventArgs e)
         {
             githubTreeView.Nodes.Add(Global.RootNode);
-            if (SelectedNode!=null)
+            if (SelectedNode!=null && SelectedNode.TreeView!=null)
             {
                 githubTreeView.CollapseAll();
                 SelectedNode.TreeView.SelectedNode = SelectedNode;
