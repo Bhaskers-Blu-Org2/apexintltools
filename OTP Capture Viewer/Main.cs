@@ -140,7 +140,10 @@ namespace Microsoft.SQL.Loc.OTPCaptureViewer
 
         private void resetState()
         {
-            currentCaptureIndex = 0;
+            if (locCaptureNames.Count > 0)
+            {
+                currentCaptureIndex = 0;
+            }
             isStartPen = false;
             isStartRectangle = false;
             isStartSuggestion = false;
